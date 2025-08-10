@@ -43,7 +43,7 @@ body {
 }
 
 .logo img {
-  height: 144px;
+  height: 130px;
   width: auto;
 }
 
@@ -111,8 +111,8 @@ body {
 .service-item {
   position: absolute;
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 135px;
+  height: 135px;
   text-decoration: none;
   cursor: pointer;
   z-index: 10;
@@ -127,7 +127,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 120px;
+  width: 108px;
   pointer-events: none;
 }
 
@@ -173,38 +173,38 @@ body {
 /* Application des animations différentes pour chaque service */
 #service-bapteme {
   animation: float1 5s ease-in-out infinite;
-  top: calc(32% - 75px);
-  left: calc(13% - 75px);
+  top: calc(32% - 67.5px);
+  left: calc(13% - 67.5px);
 }
 
 #service-confirmation {
   animation: float2 6s ease-in-out infinite;
-  top: calc(55% - 75px);
-  left: calc(27% - 75px);
+  top: calc(55% - 67.5px);
+  left: calc(27% - 67.5px);
 }
 
 #service-mariage {
   animation: float3 5.5s ease-in-out infinite;
-  top: calc(17% - 75px);
-  left: calc(27% - 75px);
+  top: calc(17% - 67.5px);
+  left: calc(27% - 67.5px);
 }
 
 #service-accompagnement {
   animation: float4 6.5s ease-in-out infinite;
-  top: calc(17% - 75px);
-  right: calc(32% - 75px);
+  top: calc(17% - 67.5px);
+  right: calc(32% - 67.5px);
 }
 
 #service-funerailles {
   animation: float5 7s ease-in-out infinite;
-  top: calc(32% - 75px);
-  right: calc(17% - 75px);
+  top: calc(32% - 67.5px);
+  right: calc(17% - 67.5px);
 }
 
 /* Bordure pour les cercles de service */
 .service-circle {
-  width: 120px;
-  height: 120px;
+  width: 108px;
+  height: 108px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -222,8 +222,8 @@ body {
 
 /* Opacité des icônes */
 .service-circle img {
-  width: 77px;
-  height: 77px;
+  width: 69px;
+  height: 69px;
   object-fit: contain;
   opacity: 0.8;
   transition: opacity 0.3s ease;
@@ -287,17 +287,17 @@ body {
 /* Responsive Design */
 @media (max-width: 992px) {
   .logo img {
-    height: 108px;
+    height: 97px;
   }
   
   .service-circle {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
   
   .service-circle img {
-    width: 66px;
-    height: 66px;
+    width: 59px;
+    height: 59px;
   }
 }
 
@@ -316,7 +316,7 @@ body {
   }
   
   .logo img {
-    height: 144px;
+    height: 130px;
   }
   
   .main-container {
@@ -374,12 +374,12 @@ body {
     bottom: auto !important;
     margin: 10px 15px;
     animation: none !important;
-    width: 90px;
-    height: 90px;
+    width: 81px;
+    height: 81px;
   }
   
   .service-content {
-    width: 80px;
+    width: 72px;
     position: relative;
     top: 0;
     left: 0;
@@ -387,15 +387,15 @@ body {
   }
   
   .service-circle {
-    width: 77px;
-    height: 77px;
+    width: 69px;
+    height: 69px;
     margin-bottom: 5px;
     border: 1px solid var(--couleur-or);
   }
   
   .service-circle img {
-    width: 48.4px;
-    height: 48.4px;
+    width: 44px;
+    height: 44px;
     opacity: 0.8;
   }
   
@@ -461,17 +461,17 @@ body {
 
 @media (max-width: 480px) {
   .logo img {
-    height: 108px;
+    height: 97px;
   }
   
   .service-circle {
-    width: 66px;
-    height: 66px;
+    width: 59px;
+    height: 59px;
   }
   
   .service-circle img {
-    width: 42.35px;
-    height: 42.35px;
+    width: 38px;
+    height: 38px;
   }
   
   .service-orbit {
@@ -488,8 +488,8 @@ body {
   
   .service-item {
     margin: 8px;
-    width: 70px;
-    height: 90px;
+    width: 63px;
+    height: 81px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -554,7 +554,7 @@ body {
   
   .service-item {
     margin: 5px;
-    height: 85px;
+    height: 77px;
   }
   
   .bottom-bar {
