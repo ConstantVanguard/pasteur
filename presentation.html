@@ -397,18 +397,18 @@
     .ouvrages-section .section-title {
       font-family: 'Cinzel', serif;
       font-size: 28px;
-      margin-bottom: 25px; 
+      margin-bottom: 25px;
       color: #C8B071;
       position: relative;
       padding-bottom: 10px;
-      text-align: center; 
+      text-align: center;
     }
     .ouvrages-section .section-title:after {
       content: "";
       position: absolute;
       bottom: 0;
-      left: 50%; 
-      transform: translateX(-50%); 
+      left: 50%;
+      transform: translateX(-50%);
       width: 60px;
       height: 2px;
       background-color: #C8B071;
@@ -491,7 +491,7 @@
     .nav-links a.nav-item, .nav-links div.nav-item { position: static !important; margin: 0; font-size: 0.85rem; }
     .internal-nav { display: none; }
     .livre-item { flex-basis: 100%; max-width: 300px; margin-left: auto; margin-right: auto; }
-    .ouvrages-section .section-title { text-align: center; } 
+    .ouvrages-section .section-title { text-align: center; }
     .ouvrages-section .section-title:after { left: 50%; transform: translateX(-50%);}
     }
 
@@ -546,13 +546,14 @@
   <div class="main-container">
     <nav class="internal-nav">
     <a href="#presentation-pasteur">Présentation</a>
+    <a href="#ma-communaute">Ma Communauté</a>
     <a href="#mes-services">Mes Services</a>
     <a href="#ma-foi">Ma Foi</a>
     <a href="#mon-approche">Mon Approche</a>
     <a href="#presbytere">Mon Presbytère</a>
     <a href="#mes-ouvrages">Mes Ouvrages</a>
     </nav>
-    
+
     <div id="presentation-pasteur" class="content-section">
   <h2 class="section-title">Présentation</h2>
   <div class="pastor-container">
@@ -570,7 +571,23 @@
     </div>
   </div>
 </div>
-    
+
+    <div id="ma-communaute" class="content-section">
+    <h2 class="section-title">La Communauté Baptiste de Belgique</h2>
+    <p>
+    Le baptisme est l'un des grands courants du protestantisme, né au XVII<sup>e</sup> siècle en Angleterre et comptant aujourd'hui plus de 100 millions de fidèles à travers le monde. Il se distingue par plusieurs principes fondamentaux : le baptême du croyant — un acte volontaire et conscient de profession de foi, et non un rituel administré aux nourrissons —, l'autorité souveraine des Écritures, le sacerdoce universel de tous les croyants et l'autonomie de chaque communauté locale. Cette autonomie signifie que chaque assemblée baptiste se gouverne librement sous la conduite de l'Esprit Saint, sans dépendre d'une hiérarchie ecclésiastique centralisée.
+    </p>
+    <p>
+    C'est dans cette tradition que s'inscrit naturellement le ministère itinérant. Puisque l'Église baptiste n'est pas définie par un édifice mais par la communion des croyants réunis au nom du Christ, le pasteur baptiste a vocation à aller vers les fidèles là où ils se trouvent. Ce ministère de terrain — célébrer un baptême au domicile d'une famille, bénir un mariage dans le lieu choisi par les époux, accompagner un deuil au plus près des proches — est l'expression même de la foi baptiste : l'Église se forme là où des croyants se rassemblent autour de la Parole.
+    </p>
+    <p>
+    La Communauté Baptiste de Belgique rassemble l'ensemble des fidèles accompagnés par le Pasteur Constant dans ce ministère — qu'ils aient reçu le sacrement du baptême, participé à un rite ou une célébration (mariage, funérailles) ou bénéficié d'un accompagnement spirituel — ainsi que les baptisés des Églises reconnues par Sa Révérence. En tant que fondateur et pasteur de cette communauté, le Révérend Constant en assure la direction spirituelle et pastorale.
+    </p>
+    <p>
+    La Communauté Baptiste de Belgique reconnaît sa communion fraternelle avec les Églises membres de l'<a href="https://www.associationbaptiste.org" target="_blank" style="color: #C8B071; text-decoration: underline;">Association évangélique d'Églises baptistes de langue française</a>, qui rassemble plus de 70 églises baptistes en France, en Belgique et en Suisse.
+    </p>
+    </div>
+
     <div id="mes-services" class="content-section">
     <h2 class="section-title">Mes Services Pastoraux</h2>
     <div class="image-gallery">
@@ -586,7 +603,7 @@
     <em>"Unitas Lux Christus: Unis dans la Lumière du Christ"</em>
     </div>
     </div>
-    
+
     <div id="ma-foi" class="content-section">
     <h2 class="section-title">Ma Foi</h2>
     <div class="image-gallery">
@@ -608,7 +625,7 @@
     Ma démarche théologique allie fidélité aux traditions réformées et ouverture aux questionnements contemporains, créant un environnement propice à l'épanouissement spirituel de chacun.
     </p>
     </div>
-    
+
     <div id="mon-approche" class="content-section">
     <h2 class="section-title">Mon Approche Pastorale</h2>
     <div class="image-gallery">
@@ -625,7 +642,7 @@
     Cette méthode d'accompagnement permet une participation flexible à la vie spirituelle, respectant les contraintes et les aspirations de chacun, qu'il s'agisse de moments solennels ou d'échanges plus informels.
     </p>
     </div>
-    
+
     <div id="presbytere" class="content-section">
     <h2 class="section-title">Presbytère de Rhode-Saint-Genèse</h2>
     <div class="image-gallery">
@@ -687,30 +704,31 @@
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenu.classList.toggle('hidden');
     });
-    
+
     document.addEventListener('click', function(event) {
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (hamburgerButton && mobileMenu && !hamburgerButton.contains(event.target) && !mobileMenu.contains(event.target)) {
     mobileMenu.classList.add('hidden');
     }
     });
-    
+
     // Navigation interne avec défilement fluide
     document.querySelectorAll('.internal-nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
     e.preventDefault();
-    
+
     const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
-    
-    if(targetElement) { 
+
+    if(targetElement) {
         window.scrollTo({
-        top: targetElement.offsetTop - 80, 
+        top: targetElement.offsetTop - 80,
         behavior: 'smooth'
         });
     }
+    });
     });
     });
   </script>
