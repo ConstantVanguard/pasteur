@@ -50,7 +50,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Écouteur pour le bouton "Vérifier la disponibilité"
-  bookButton.addEventListener("click", function() {
+  bookButton.addEventListener("click", async function() {
+    // Attendre la fin de la sync Google Calendar avant toute vérification.
+    if (typeof calendarReady !== 'undefined' && calendarReady && typeof calendarReady.then === 'function') {
+      try { await calendarReady; } catch (e) { /* ignore : la vérif manuelle tiendra */ }
+    }
     const dateValue = datePicker.value;
     paypalButtonDiv.style.display = "none"; // Cacher le bouton PayPal par défaut
 

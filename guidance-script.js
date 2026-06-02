@@ -57,7 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  bookButton.addEventListener("click", function() {
+  bookButton.addEventListener("click", async function() {
+    // Attendre la fin de la sync Google Calendar avant toute vérification.
+    if (typeof calendarReady !== 'undefined' && calendarReady && typeof calendarReady.then === 'function') {
+      try { await calendarReady; } catch (e) { /* ignore : la vérif manuelle tiendra */ }
+    }
     const dateValue = datePicker.value;
     const selectedType = sessionTypeSelect.value;
 

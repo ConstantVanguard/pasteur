@@ -24,11 +24,11 @@ const manualBlockedDates = [
 
 // Délai d'attente minimum en jours avant de pouvoir réserver chaque service
 const serviceLeadTimes = {
-  bapteme: 17,
-  mariage: 41,
-  confirmation: 12,
+  bapteme: 32,
+  mariage: 56,
+  confirmation: 23,
   enterrement: 0, // Pour les funérailles, un délai de 0 jour est souvent nécessaire
-  guidance: 6
+  guidance: 8
 };
 
 // URL publique de votre agenda Google au format iCalendar (ICS)
@@ -133,7 +133,9 @@ async function fetchGoogleCalendarBlockedDates() {
     console.error("Erreur lors du traitement de l'agenda Google (via proxy):", error);
   }
 }
-fetchGoogleCalendarBlockedDates();
+// Promesse exposée globalement pour permettre aux scripts de réservation
+// d'attendre que la première sync calendrier soit terminée avant de tester une date.
+const calendarReady = fetchGoogleCalendarBlockedDates();
 
 function isServiceDateAvailable(dateStringFromPicker, currentServiceName) {
   const parts = dateStringFromPicker.split('-');
