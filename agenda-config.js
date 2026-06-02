@@ -195,3 +195,44 @@ function isServiceDateAvailable(dateStringFromPicker, currentServiceName) {
   console.log(`Date ${fullFormattedDateForComparison} disponible pour le service ${currentServiceName}.`);
   return true;
 }
+
+/**
+ * Trouve la prochaine date disponible pour un service donné.
+ * @param {string} fromDateString - Date de référence "YYYY-MM-DD" (typiquement la date refusée).
+ * @param {string} serviceName - Nom du service ('mariage', 'bapteme', etc.).
+ * @param {number} maxDaysAhead - Nombre maximum de jours à scanner (défaut : 365).
+ * @returns {string|null} - "YYYY-MM-DD" de la prochaine date dispo, ou null si rien trouvé.
+ */
+function findNextAvailableDate(fromDateString, serviceName, maxDaysAhead = 365) {
+  const parts = fromDateString.split('-');
+  const year = parseInt(parts[0], 10);
+  const month = parseInt(parts[1], 10) - 1;
+  const day = parseInt(parts[2], 10);
+
+  let testDate = new Date(year, month, day);
+  testDate.setHours(0, 0, 0, 0);
+
+  for (let i = 1; i <= maxDaysAhead; i++) {
+    testDate.setDate(testDate.getDate() + 1);
+    const y = testDate.getFullYear();
+    const m = String(testDate.getMonth() + 1).padStart(2, '0');
+    const d = String(testDate.getDate()).padStart(2, '0');
+    const candidate = `${y}-${m}-${d}`;
+
+    if (isServiceDateAvailable(candidate, serviceName)) {
+      return candidate;
+    }
+  }
+  return null;
+}
+
+/**
+ * Formate une date "YYYY-MM-DD" en français lisible (ex: "samedi 12 juillet 2026").
+ */
+function formatDateFrench(dateString) {
+  const parts = dateString.split('-');
+  const d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+  const jours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+  const mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  return `${jours[d.getDay()]} ${d.getDate()} ${mois[d.getMonth()]} ${d.getFullYear()}`;
+}

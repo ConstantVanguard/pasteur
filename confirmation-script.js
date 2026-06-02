@@ -67,7 +67,23 @@ document.addEventListener('DOMContentLoaded', function() {
         paypalButtonDiv.style.display = "block";
       } else {
         messageDiv.style.color = "#FFD140";
-        messageDiv.textContent = "La date sélectionnée n'est pas disponible. Veuillez choisir une autre date.";
+        // Chercher la prochaine date disponible
+        var nextDate = (typeof findNextAvailableDate === 'function') ? findNextAvailableDate(dateValue, serviceName) : null;
+        if (nextDate) {
+          var label = formatDateFrench(nextDate);
+          messageDiv.innerHTML = "Date non disponible. Prochaine date libre : <strong>" + label + "</strong>. " +
+            "<a href=\"#\" id=\"selectNextDate\" style=\"color:#C8B071;text-decoration:underline;margin-left:8px;\">Sélectionner cette date</a>";
+          var link = document.getElementById('selectNextDate');
+          if (link) {
+            link.addEventListener('click', function(e) {
+              e.preventDefault();
+              datePicker.value = nextDate;
+              bookButton.click();
+            });
+          }
+        } else {
+          messageDiv.textContent = "Date non disponible et aucune date libre dans l'année à venir. Veuillez me contacter directement par téléphone.";
+        }
       }
     } else {
       console.error("La fonction isServiceDateAvailable n'est pas définie. Vérifiez que agenda-config.js est correctement chargé AVANT ce script.");
