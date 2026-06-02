@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isServiceDateAvailable(dateValue, serviceName)) {
         messageDiv.style.color = "#C8B071";
         // Le message d'acompte pour les funérailles est de 50€ selon le script original
-        messageDiv.textContent = "Date disponible. Veuillez procéder au paiement de l'acompte de 50€."; //
+        messageDiv.textContent = "Date disponible. Veuillez procéder au paiement pour réserver cette date."; //
         paypalButtonDiv.style.display = "block";
       } else {
         messageDiv.style.color = "#FFD140";
