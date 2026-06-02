@@ -3,740 +3,455 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasteur Constant - Services Religieux et Accompagnement Spirituel</title>
-  <meta name="description" content="Pasteur Constant (Rhode-Saint-Genèse) : services religieux personnalisés (baptême, mariage, funérailles) et accompagnement spirituel en Belgique.">
+  <title>Pasteur Constant — Présentation et services pastoraux baptistes en Belgique</title>
+  <meta name="description" content="Pasteur Constant (Rhode-Saint-Genèse) : pasteur baptiste indépendant en Belgique. Services personnalisés et accompagnement spirituel, dans la tradition baptiste évangélique.">
   <link rel="canonical" href="https://www.reverend.be/presentation.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Base styles */
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    /* Spécifique présentation */
+    .presentation-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+    .pastor-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--gold);
+      padding: 12px;
+      background: var(--bg);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .pastor-image-fallback {
+      width: 100%;
+      aspect-ratio: 4/5;
+      border: 1px solid var(--gold);
+      padding: 12px;
+      background: var(--bg-soft);
+      display: grid;
+      place-items: center;
+      color: var(--ink-soft);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 14px;
+      text-align: center;
     }
 
-    body {
-    font-family: 'Cinzel', serif;
-    background: url("hero_background.png") center/cover fixed;
-    color: #C8B071;
-    min-height: 100vh;
-    position: relative;
-    overflow-y: auto !important;
-    padding-bottom: 60px; /* Espace pour le bandeau du bas */
-    }
-
-    /* Hamburger Menu */
-    .hamburger-menu {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    z-index: 100;
-    }
-
-    #hamburger-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-    }
-
-    #hamburger-button span {
-    width: 100%;
-    height: 3px;
-    background-color: #C8B071;
-    border-radius: 3px;
-    transition: all 0.3s linear;
-    }
-
-    #mobile-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    padding: 20px;
-    z-index: 5;
-    min-width: 250px;
-    }
-
-    #mobile-menu.hidden {
-    display: none;
-    }
-
-    #mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    }
-
-    #mobile-menu li {
-    margin: 15px 0;
-    border-bottom: 1px solid rgba(200, 176, 113, 0.3);
-    padding-bottom: 10px;
-    }
-
-    #mobile-menu li:last-child {
-    border-bottom: none;
-    }
-
-    #mobile-menu a {
-    text-decoration: none;
-    color: #C8B071;
-    font-weight: 500;
-    display: block;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-    }
-
-    #mobile-menu a:hover {
-    color: #fff;
-    }
-
-    /* Page header */
-    .page-header {
-    text-align: center;
-    padding: 70px 0 40px;
-    position: relative;
-    }
-
-    .title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    position: relative;
-    top: -10px;
-    }
-
-    .church-logo {
-    width: 72px;
-    height: auto;
-    margin-bottom: 10px;
-    }
-
-    .page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
-    color: #C8B071;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .page-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: #C8B071;
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Main container */
-    .main-container {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 20px;
-    background: url("dark_parchment.png") center/cover;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    border: 1px solid rgba(200, 176, 113, 0.3);
-    }
-
-    /* Internal navigation */
     .internal-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    border: 1px solid rgba(200, 176, 113, 0.3);
+      position: sticky;
+      top: 90px;
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin-bottom: 60px;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
     }
-
     .internal-nav a {
-    color: #C8B071;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 15px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 8px 6px;
+      transition: color 0.2s;
+      white-space: nowrap;
     }
+    .internal-nav a:hover { color: var(--gold-dark); }
 
-    .internal-nav a:hover {
-    background-color: rgba(200, 176, 113, 0.2);
-    color: #fff;
+    .ouvrages-section {
+      background: var(--bg-soft);
+      padding: 70px 50px;
+      border-radius: var(--radius-md);
+      margin-top: 80px;
+      border-top: 3px solid var(--gold);
     }
-
-    /* Content sections */
-    .content-section {
-    margin-bottom: 60px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    border: 1px solid rgba(200, 176, 113, 0.3);
+    .ouvrages-section .section-title {
+      text-align: center;
     }
-
-    .section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #C8B071;
-    position: relative;
-    padding-bottom: 10px;
+    .ouvrages-section .section-title::after {
+      left: 50%;
+      transform: translateX(-50%);
     }
-
-    .section-title:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background-color: #C8B071;
+    .livres-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
     }
-
-    .content-section p {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #fff;
+    .livre-item {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--rule);
+      transition: transform 0.3s var(--easing), box-shadow 0.3s;
     }
-
-    .content-section ul {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #fff;
-    padding-left: 20px;
+    .livre-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
     }
-
-    .content-section li {
-    margin-bottom: 8px;
+    .livre-item img {
+      max-height: 220px;
+      width: auto;
+      margin: 0 auto 20px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gold-pale);
     }
-
-    .quote-box {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #C8B071;
-    padding: 20px;
-    border-left: 3px solid #C8B071;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin: 20px 0;
-    text-align: center;
+    .livre-titre {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--ink);
+      margin-bottom: 14px;
+      line-height: 1.3;
+      min-height: 50px;
     }
-
-    .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 30px;
-    z-index: 100;
-    border-top: 1px solid rgba(200, 176, 113, 0.3);
+    .livre-lien {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-dark);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-md);
+      transition: background 0.2s, color 0.2s;
     }
-
-    .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    position: relative;
-    }
-
-    .nav-item {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    color: #C8B071;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin: 0 20px;
-    }
-
-    .nav-links a.nav-item {
-    text-decoration: none;
-    }
-
-    .nav-links a.nav-item:first-child {
-    position: absolute;
-    left: 0;
-    }
-
-    .nav-links a.nav-item:last-child {
-    position: absolute;
-    right: 0;
-    }
-
-    .nav-item:hover {
-    color: #fff;
-    }
-
-    .image-gallery {
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 100%;
-    }
-
-    .gallery-image {
-    width: 100%;
-    height: 180px;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    margin-bottom: 15px;
-    object-fit: cover;
-    object-position: center;
-    -webkit-backface-visibility: hidden;
-    -ms-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    }
-
-    .gallery-image:hover {
-    transform: scale(1.02);
+    .livre-lien:hover {
+      background: var(--gold);
+      color: var(--ink);
     }
 
     .multi-image-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
     }
-
     .multi-image-container .gallery-image {
-    margin-bottom: 0;
-    height: 120px;
-    object-fit: cover;
-    }
-
-    .pastor-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 20px;
-    }
-
-    .pastor-image {
-    width: 210px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: contain;
-    -webkit-backface-visibility: hidden;
-    -ms-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    }
-
-    .pastor-text {
-    flex: 1;
-    }
-
-    .pastor-text p {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #fff;
+      height: 200px;
     }
 
     .centre-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-bottom: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
     }
-
     .centre-container .gallery-image {
-    height: auto;
-    max-height: 220px;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
-    transition: none;
-    -webkit-backface-visibility: hidden;
-    -ms-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+      height: 260px;
     }
 
-    .centre-container .gallery-image:hover {
-    transform: none;
+    /* Élargissement des paragraphes de cette page :
+       le texte s'étend jusqu'au bord des images. */
+    .content-section p,
+    .content-section ul,
+    .content-section .price-line {
+      max-width: none;
+    }
+    .pastor-text p {
+      max-width: none;
     }
 
-    /* STYLES POUR LA SECTION "MES OUVRAGES" */
-    .ouvrages-section {
-      margin-bottom: 60px;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 8px;
-      border: 1px solid rgba(200, 176, 113, 0.2);
+    /* ─── Section "Mon vécu" — inversion couleurs (Variante A) ─── */
+    #mon-vecu {
+      background: #0E1828;
+      padding: 60px 50px;
+      border-radius: var(--radius-md);
+      border-top: 3px solid var(--gold);
+      margin: 60px 0;
+      box-shadow: 0 30px 60px -30px rgba(14, 24, 40, 0.4);
     }
-
-    .ouvrages-section .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #C8B071;
-      position: relative;
-      padding-bottom: 10px;
+    #mon-vecu .section-eyebrow {
+      color: var(--gold);
+    }
+    #mon-vecu .section-eyebrow::before {
+      background: var(--gold);
+    }
+    #mon-vecu .section-title {
+      color: #F0EDE3;
+    }
+    #mon-vecu .section-title::after {
+      background: var(--gold);
+    }
+    #mon-vecu p {
+      color: #F0EDE3;
+    }
+    #mon-vecu .gallery-image {
+      border: 1px solid var(--gold);
+      padding: 8px;
+      background: #0E1828;
+    }
+    #mon-vecu .voix-divine {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 24px;
+      color: var(--gold);
+      padding: 26px 20px;
+      margin: 20px auto;
+      border-top: 1px solid rgba(184, 154, 86, 0.35);
+      border-bottom: 1px solid rgba(184, 154, 86, 0.35);
+      max-width: 720px;
+    }
+    #mon-vecu .temoignage-final {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--gold-pale);
+      border-top: 1px solid var(--gold);
+      padding-top: 26px;
+      margin-top: 36px;
       text-align: center;
     }
-    .ouvrages-section .section-title:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 2px;
-      background-color: #C8B071;
+
+    @media (max-width: 640px) {
+      #mon-vecu { padding: 40px 24px; }
+      #mon-vecu .voix-divine { font-size: 19px; padding: 20px 10px; }
+      #mon-vecu .temoignage-final { font-size: 17px; }
     }
 
-    .livres-container {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .livre-item {
-      flex-basis: calc(50% - 30px);
-      max-width: 280px;
-      text-align: center;
-      padding: 15px;
-      background-color: rgba(0,0,0,0.2);
-      border-radius: 5px;
-    }
-
-    .livre-item img {
-      width: auto;
-      max-height: 200px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      border: 1px solid rgba(200, 176, 113, 0.3);
-    }
-
-    .livre-item .livre-titre {
-      font-family: 'Cinzel', serif;
-      font-size: 16px;
-      color: #C8B071;
-      margin-bottom: 8px;
-      line-height: 1.3;
-      min-height: 40px;
-    }
-
-    .livre-item .livre-lien {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px;
-      color: #C8B071;
-      text-decoration: underline;
-      transition: color 0.3s ease;
-    }
-
-    .livre-item .livre-lien:hover {
-      color: #fff;
-    }
-    /* FIN STYLES OUVRAGES */
-
-
-    /* Responsive design */
-    @media (max-width: 992px) {
-    .church-logo { width: 54px; }
-    .page-title { font-size: 36px; }
-    .page-subtitle { font-size: 18px; }
-    .gallery-image { height: 160px; }
-    .multi-image-container { grid-template-columns: repeat(2, 1fr); }
-    .multi-image-container .gallery-image { height: 110px; }
-    .centre-container { grid-template-columns: 1fr; }
-    .centre-container .gallery-image { max-height: 180px; }
-    .pastor-container { flex-direction: column; align-items: center; }
-    .pastor-image { margin-bottom: 15px; }
-    }
-
-    @media (max-width: 768px) {
-    .church-logo { width: 48px; }
-    .page-header { padding: 70px 0 30px; }
-    .page-title { font-size: 32px; }
-    .section-title { font-size: 24px; }
-    .content-section p, .content-section ul, .quote-box { font-size: 16px !important; }
-    .pastor-text p { font-size: 16px !important; font-weight: normal; }
-    .gallery-image { height: 140px; }
-    .multi-image-container { grid-template-columns: repeat(2, 1fr); }
-    .multi-image-container .gallery-image { height: 100px; }
-    .centre-container .gallery-image { max-height: 160px; }
-    .bottom-bar { padding: 8px 15px; background-color: rgba(0, 0, 0, 0.6); }
-    .nav-links { flex-direction: row; justify-content: space-between; width: 100%; transform: none; }
-    .nav-links a.nav-item, .nav-links div.nav-item { position: static !important; margin: 0; font-size: 0.85rem; }
-    .internal-nav { display: none; }
-    .livre-item { flex-basis: 100%; max-width: 300px; margin-left: auto; margin-right: auto; }
-    .ouvrages-section .section-title { text-align: center; }
-    .ouvrages-section .section-title:after { left: 50%; transform: translateX(-50%);}
-    }
-
-    @media (max-width: 480px) {
-    .church-logo { width: 36px; }
-    .page-header { padding: 60px 0 20px; }
-    .page-title { font-size: 28px; }
-    .page-subtitle { font-size: 16px; }
-    .section-title { font-size: 22px; }
-    .content-section p, .content-section ul, .quote-box { font-size: 15px !important; }
-    .pastor-text p { font-size: 15px !important; }
-    .gallery-image { height: 120px; }
-    .multi-image-container { grid-template-columns: 1fr; }
-    .multi-image-container .gallery-image { height: 120px; }
-    .centre-container .gallery-image { max-height: 140px; }
-    .bottom-bar { padding: 6px 10px; background-color: rgba(0, 0, 0, 0.5); }
-    .nav-links a.nav-item, .nav-links div.nav-item { font-size: 0.75rem; }
-    .ouvrages-section .section-title { font-size: 22px; }
-    .livre-item .livre-titre { font-size: 15px; }
-    .livre-item .livre-lien { font-size: 13px; }
+    @media (max-width: 900px) {
+      .presentation-grid { grid-template-columns: 1fr; gap: 24px; }
+      .pastor-image, .pastor-image-fallback { max-width: 320px; margin: 0 auto; }
+      .internal-nav { position: static; gap: 6px 16px; }
+      .ouvrages-section { padding: 40px 24px; }
+      .livres-container { grid-template-columns: 1fr; gap: 24px; }
+      .multi-image-container { grid-template-columns: 1fr 1fr; }
+      .centre-container { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <div class="hamburger-menu">
-    <button id="hamburger-button" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-    </button>
-    <nav id="mobile-menu" class="hidden">
-    <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="bapteme.html">Baptême</a></li>
-    <li><a href="mariage.html">Mariage</a></li>
-    <li><a href="enterrement.html">Funérailles</a></li>
-    <li><a href="confirmation.html">Cours de Membres</a></li>
-    <li><a href="guidance.html">Accompagnement Spirituel</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
+
+  <div class="top-strip">
+    Communauté Baptiste de Belgique
   </div>
 
-  <header class="page-header">
-    <div class="title-container">
-    <img src="logo2.png" alt="Logo Pasteur Constant" class="church-logo">
-    <h1 class="page-title">Pasteur Constant</h1>
-    </div>
-    <p class="page-subtitle">Services religieux et accompagnement spirituel</p>
-  </header>
-
-  <div class="main-container">
-    <nav class="internal-nav">
-    <a href="#presentation-pasteur">Présentation</a>
-    <a href="#ma-communaute">Ma Communauté</a>
-    <a href="#mes-services">Mes Services</a>
-    <a href="#ma-foi">Ma Foi</a>
-    <a href="#mon-approche">Mon Approche</a>
-    <a href="#presbytere">Mon Presbytère</a>
-    <a href="#mes-ouvrages">Mes Ouvrages</a>
-    </nav>
-
-    <div id="presentation-pasteur" class="content-section">
-  <h2 class="section-title">Présentation</h2>
-  <div class="pastor-container">
-    <img src="reverend_portrait.jpg" alt="Portrait du Pasteur Constant" class="pastor-image" loading="lazy">
-    <div class="pastor-text">
-      <p>
-        Né en Belgique en 1980, marié et père de famille, mon parcours me permet de comprendre les joies et les défis que nous traversons tous: issu d'une famille de pasteurs et ordonné en 2022, je mets mon engagement au service de chaque chrétien.
-      </p>
-      <p>
-        La foi s'exprime de multiples façons. C'est pourquoi l'accompagnement proposé est ouvert à tous, que votre pratique soit régulière ou que vous ayez besoin d'un service religieux pour une étape de votre vie. En Belgique, où le nombre de pasteurs est limité, j'essaie d'apporter une présence religieuse et de répondre aux besoins de chaque Croyant.
-      </p>
-      <p>
-        Des services sont proposés pour les moments importants de votre vie – mariages, baptêmes, funérailles, cours de membres – ainsi que des guidances spirituelles adaptées à vos demandes spécifiques. Fort d'une expertise théologique et d'une approche rigoureuse de la Bible, un accompagnement est offert sur votre chemin de foi, dans la paix du Christ et pour le salut de votre âme.
-      </p>
-    </div>
-  </div>
-</div>
-
-    <div id="ma-communaute" class="content-section">
-    <h2 class="section-title">La Communauté Baptiste de Belgique</h2>
-    <div class="image-gallery">
-    <img src="eglise_communaute.jpg" alt="La Communauté Baptiste de Belgique" class="gallery-image" loading="lazy">
-    </div>
-    <p>
-    La Communauté Baptiste de Belgique (CBB) est la communauté fondée et dirigée par le Pasteur Constant. Elle rassemble l'ensemble des croyants accompagnés dans son ministère — qu'ils aient reçu le baptême, participé à un rite ou une célébration (mariage, funérailles) ou bénéficié d'un accompagnement spirituel — ainsi que les baptisés des Églises reconnues par Sa Révérence. En tant que fondateur et pasteur de cette communauté, le Révérend Constant en assure la direction spirituelle et pastorale.
-    </p>
-    <p>
-    Le baptisme est l'un des grands courants du protestantisme, né au XVII<sup>e</sup> siècle en Angleterre et comptant aujourd'hui plus de 100 millions de croyants à travers le monde. Il se distingue par plusieurs principes fondamentaux : le baptême du croyant — un acte volontaire et conscient de profession de foi, et non un rituel administré aux nourrissons —, l'autorité souveraine des Écritures, le sacerdoce universel de tous les croyants et l'autonomie de chaque communauté locale. Cette autonomie signifie que chaque assemblée baptiste se gouverne librement sous la conduite de l'Esprit Saint, sans dépendre d'une hiérarchie ecclésiastique centralisée.
-    </p>
-    <p>
-    C'est dans cette tradition que s'inscrit naturellement le ministère itinérant. Puisque l'Église baptiste n'est pas définie par un édifice mais par la communion des croyants réunis au nom du Christ, le pasteur baptiste a vocation à aller vers les croyants là où ils se trouvent. Ce ministère de terrain — célébrer un baptême au domicile d'une famille, bénir un mariage dans le lieu choisi par les époux, accompagner un deuil au plus près des proches — est l'expression même de la foi baptiste : l'Église se forme là où des croyants se rassemblent autour de la Parole.
-    </p>
-    <p>
-    Pour en savoir plus sur la CBB, sa confession de foi et la vie protestante en Belgique, rendez-vous sur <a href="https://www.baptistesdebelgique.be" target="_blank" style="color: #C8B071; text-decoration: underline;">baptistesdebelgique.be</a>
-    </p>
-    <p style="font-size: 14px; color: rgba(200, 176, 113, 0.5); margin-top: 10px;">
-    En communion fraternelle avec l'<a href="https://www.associationbaptiste.org" target="_blank" style="color: rgba(200, 176, 113, 0.5); text-decoration: none;">AEEBLF</a>.
-    </p>
-    </div>
-
-    <div id="mes-services" class="content-section">
-    <h2 class="section-title">Mes Services Pastoraux</h2>
-    <div class="image-gallery">
-    <img src="eglise_services.jpg" alt="Services pastoraux - Accompagnement spirituel" class="gallery-image" loading="lazy">
-    </div>
-    <p>
-    En tant que Pasteur, j'offre mes services dans la tradition baptiste évangélique. Mon ministère transcende les structures traditionnelles, car je considère que l'église véritable réside dans la communion des croyants plutôt que dans les édifices. Cette vision me permet de proposer un accompagnement personnalisé, quelle que soit votre situation géographique ou votre niveau d'engagement religieux.
-    </p>
-    <p>
-    Mes services s'articulent autour de l'accueil bienveillant et du développement spirituel, créant un espace où chacun peut cheminer selon son rythme et ses besoins particuliers.
-    </p>
-    <div class="quote-box">
-    <em>"Unitas Lux Christus: Unis dans la Lumière du Christ"</em>
-    </div>
-    </div>
-
-    <div id="ma-foi" class="content-section">
-    <h2 class="section-title">Ma Foi</h2>
-    <div class="image-gallery">
-    <img src="eglise_priere.jpg" alt="Ma foi - Bible et tradition baptiste" class="gallery-image" loading="lazy">
-    </div>
-    <p>
-    Mes convictions s'enracinent dans les fondements du christianisme, particulièrement dans la tradition baptiste évangélique, tout en embrassant la richesse des diverses expressions de foi. J'affirme la souveraineté du Christ-Roi, qui règne avec justice et miséricorde, guidant les croyants vers le Royaume des Cieux.
-    </p>
-    <p>
-    Les piliers de ma foi incluent :
-    </p>
-    <ul>
-    <li>La bienveillance comme expression première de l'amour chrétien</li>
-    <li>L'accueil inconditionnel, sans distinction d'origine ou de parcours</li>
-    <li>Le respect du cheminement spirituel individuel</li>
-    <li>Le service d'autrui comme témoignage concret de nos valeurs</li>
-    </ul>
-    <p>
-    Ma démarche théologique allie fidélité à la tradition baptiste et ouverture aux questionnements contemporains, créant un environnement propice à l'épanouissement spirituel de chacun.
-    </p>
-    </div>
-
-    <div id="mon-approche" class="content-section">
-    <h2 class="section-title">Mon Approche Pastorale</h2>
-    <div class="image-gallery">
-    <div class="multi-image-container">
-    <img src="communaute_partage.jpg" alt="Mon approche - Moments de partage" class="gallery-image" loading="lazy">
-    <img src="communaute_rencontre.jpg" alt="Mon approche - Rencontres personnalisées" class="gallery-image" loading="lazy">
-    <img src="communaute_celebration.jpg" alt="Mon approche - Célébrations" class="gallery-image" loading="lazy">
-    </div>
-    </div>
-    <p>
-    Mon approche pastorale se caractérise par l'écoute attentive et l'adaptation aux besoins spécifiques de chaque personne. Je privilégie un climat de confiance mutuelle où chacun peut s'exprimer librement sur ses questionnements spirituels.
-    </p>
-    <p>
-    Cette méthode d'accompagnement permet une participation flexible à la vie spirituelle, respectant les contraintes et les aspirations de chacun, qu'il s'agisse de moments solennels ou d'échanges plus informels.
-    </p>
-    </div>
-
-    <div id="presbytere" class="content-section">
-    <h2 class="section-title">Presbytère de Rhode-Saint-Genèse</h2>
-    <div class="image-gallery">
-    <div class="centre-container">
-    <img src="centre_exterieur.jpg" alt="Presbytère de Rhode-Saint-Genèse - Vue extérieure" class="gallery-image" loading="lazy">
-    <img src="centre_interieur.jpg" alt="Presbytère de Rhode-Saint-Genèse - Vue intérieure" class="gallery-image" loading="lazy">
-    </div>
-    </div>
-    <p>
-    Le Presbytère de Rhode-Saint-Genèse constitue mon lieu d'accueil et de rassemblement. Situé dans un environnement paisible, cet espace fait office de presbytère et de lieu de recueillement pour mon ministère pastoral.
-    </p>
-    <p>
-    Adresse: Octave Michotlaan 1, 1640 Rhode-Saint-Genèse
-    </p>
-    <p>
-    Ce presbytère accueille (sur rendez-vous) :
-    </p>
-    <ul>
-    <li>Les préparations de cérémonies</li>
-    <li>Les accompagnements spirituels</li>
-    <li>Certaines cérémonies et activités</li>
-    <li>Les rencontres pastorales</li>
-    </ul>
-    <p>
-    Bien que mes services s'étendent au-delà de cette enceinte, ce presbytère représente un point d'ancrage pour ceux qui souhaitent une rencontre personnelle ou un moment de réflexion dans un cadre serein.
-    </p>
-    </div>
-
-    <div id="mes-ouvrages" class="ouvrages-section">
-      <h2 class="section-title">Mes Ouvrages</h2>
-      <div class="livres-container">
-        <div class="livre-item">
-          <img src="couverture_guidance_spirituelle.png" alt="Couverture Guidance Spirituelle par le Révérend Constant">
-          <p class="livre-titre">Guidance Spirituelle : Le Compas du Chrétien Face aux Défis de la Vie</p>
-          <a href="https://www.amazon.fr/Guidance-Spirituelle-Compas-Chr%C3%A9tien-D%C3%A9fis-ebook/dp/B0CLK8VZJX/ref=sr_1_1?dib=eyJ2IjoiMSJ9.RE-S4PcLOUrSjn4HmIBDfdE3bRosfqJ1W0h51qEk0JQ.0_X4WBPuHGU46N5gxlo2bkoDdQ_X1LpN9yxN5Gy3K2E&dib_tag=se&qid=1748855438&refinements=p_27%3AR%C3%A9v%C3%A9rend+Constant&s=digital-text&sr=1-1&text=R%C3%A9v%C3%A9rend+Constant" target="_blank" class="livre-lien">Disponible sur Amazon</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-seal"><span class="brand-seal-letter">C</span></div>
+        <div class="brand-text">
+          <div class="brand-title">Pasteur Constant</div>
+          <div class="brand-sub">Communauté Baptiste de Belgique</div>
         </div>
-        <div class="livre-item">
-          <img src="couverture_confirmation_protestante.png" alt="Couverture Vers la Confirmation Protestante par le Révérend Constant">
-          <p class="livre-titre">Vers la Confirmation Protestante : Guide Préparatoire pour Jeunes et Adultes</p>
-          <a href="https://www.amazon.fr/Vers-Confirmation-Protestante-Pr%C3%A9paratoire-Adultes-ebook/dp/B0CSZG2GT4/ref=sr_1_2?dib=eyJ2IjoiMSJ9.RE-S4PcLOUrSjn4HmIBDfdE3bRosfqJ1W0h51qEk0JQ.0_X4WBPuHGU46N5gxlo2bkoDdQ_X1LpN9yxN5Gy3K2E&dib_tag=se&qid=1748855438&refinements=p_27%3AR%C3%A9v%C3%A9rend+Constant&s=digital-text&sr=1-2&text=R%C3%A9v%C3%A9rend+Constant" target="_blank" class="livre-lien">Disponible sur Amazon</a>
-        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a href="presentation.html">Présentation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="hamburger-menu">
+        <button id="hamburger-button" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="mobile-menu" class="hidden">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="bapteme.html">Baptême</a></li>
+            <li><a href="mariage.html">Mariage</a></li>
+            <li><a href="enterrement.html">Funérailles</a></li>
+            <li><a href="confirmation.html">Cours de Membres</a></li>
+            <li><a href="guidance.html">Accompagnement Spirituel</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-    </div>
+  </header>
 
-  <div class="bottom-bar">
-    <div class="nav-links">
-    <a href="index.html" class="nav-item">Pasteur Constant</a>
-    <a href="presentation.html" class="nav-item">Présentation</a>
-    <a href="contact.html" class="nav-item">Contact</a>
-    </div>
-  </div>
+  <header class="page-header">
+    <div class="page-eyebrow">Pasteur baptiste de la grâce souveraine</div>
+    <h1 class="page-title">Pasteur Constant</h1>
+    <p class="page-subtitle">Services pastoraux et accompagnement spirituel — Belgique</p>
+  </header>
 
+  <main class="page-main">
+
+    <nav class="internal-nav">
+      <a href="#presentation-pasteur">Présentation</a>
+      <a href="#ma-foi">Ma Foi</a>
+      <a href="#mon-vecu">Mon Vécu</a>
+      <a href="#mes-services">Mes Services</a>
+      <a href="#presbytere">Le Presbytère</a>
+      <a href="#ma-communaute">La Communauté</a>
+      <a href="#mes-ouvrages">Mon Ouvrage</a>
+    </nav>
+
+    <section class="content-section reveal" id="presentation-pasteur">
+      <div class="section-eyebrow">Présentation</div>
+      <h2 class="section-title">Pasteur baptiste, <em>engagé</em>.</h2>
+      <div class="presentation-grid">
+        <img src="reverend_portrait.jpg" alt="Portrait du Pasteur Constant" class="pastor-image" loading="lazy"
+             onerror="this.outerHTML='<div class=&quot;pastor-image-fallback&quot;>Portrait du Pasteur — à insérer</div>';">
+        <div>
+          <p>Né en Belgique en 1980, marié et père de famille, mon parcours me permet de comprendre les joies et les défis que nous traversons tous : issu d'une famille de pasteurs et diplômé de la célèbre <em>Christian Leaders Institute</em> en 2022, je mets mon engagement au service de chaque chrétien.</p>
+          <p>La foi s'exprime de multiples façons. C'est pourquoi l'accompagnement proposé est ouvert à tous, que votre pratique soit régulière ou que vous ayez besoin d'un service religieux pour une étape de votre vie. En Belgique, où le nombre de pasteurs est limité, j'essaie d'apporter une présence religieuse et de répondre aux besoins de chaque Croyant.</p>
+          <p>Des services sont proposés pour les moments importants de votre vie — mariages, baptêmes, funérailles, cours de membres — ainsi que des guidances spirituelles adaptées à vos demandes spécifiques. Fort d'une expertise théologique et d'une approche rigoureuse de la Bible, un accompagnement est offert sur votre chemin de foi, dans la paix du Christ et pour le salut de votre âme.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="ma-foi">
+      <div class="section-eyebrow">Mes convictions</div>
+      <h2 class="section-title">Justice <em>divine</em> et grâce <em>souveraine</em>.</h2>
+      <div class="image-gallery" style="grid-template-columns: 1fr;">
+        <img src="eglise_priere.jpg" alt="Ma foi — Bible Louis Segond et tradition baptiste" class="gallery-image" style="height: 360px;" loading="lazy">
+      </div>
+      <p>Je crois en un Dieu souverain, juste et miséricordieux, qui règne sans partage sur sa création. Cette souveraineté est la clé de lecture des Écritures : sans la justice de Dieu — sa sainteté, sa colère contre le péché, son jugement à venir — l'amour évangélique n'est qu'un slogan publicitaire. Je récuse l'idée d'un amour inconditionnel mal compris, qui occulte le besoin de conversion et la perdition réelle de ceux qui rejettent le Christ. <em>Large est le chemin qui mène à la perdition, et étroit celui qui mène à la vie</em>, dit Matthieu 7:13-14. Ce n'est pas un avertissement marginal — c'est le cadre dans lequel toute l'Écriture se lit.</p>
+      <p>Pour parvenir à cette compréhension, j'utilise les cinq outils du protestantisme historique, les cinq <em>Solas</em>. <strong>Sola Scriptura</strong> : la Bible Louis Segond est l'unique autorité, aucune tradition humaine ne s'y ajoute. <strong>Sola Fide</strong> : c'est par la foi seule en Christ que le croyant est justifié. <strong>Sola Gratia</strong> : le salut est don de Dieu, jamais acquis. <strong>Solus Christus</strong> : il n'y a aucun intermédiaire entre Dieu et l'homme, sinon le Christ lui-même. <strong>Soli Deo Gloria</strong> : à Dieu seul revient la gloire. Ce sont les garde-fous doctrinaux qui empêchent la foi de glisser vers l'invention humaine.</p>
+      <p>Là où la Communauté Baptiste de Belgique se distingue dans son vécu, c'est dans l'importance qu'elle demande à <strong>s'entraider entre chrétiens</strong>. Non pas comme une volonté pieuse de slogan évangélique, mais comme une entraide concrète et structurée qui constitue une offrande à Dieu et à toute la Communauté. C'est la lumière partagée qu'évoque notre devise — <em>Unitas Lux Christus</em>, unis dans la lumière du Christ. Une assemblée qui s'entraide rayonne ; une assemblée qui rayonne attire des âmes au royaume.</p>
+      <p>Enfin, ma foi est baptiste de fond, dans toute la rigueur du terme : itinérante, à la rencontre, jamais enfermée dans des murs. L'Église baptiste n'est pas un édifice mais une communion de fidèles ; le pasteur baptiste a vocation à aller chercher les âmes égarées là où elles se trouvent — au domicile d'une famille en deuil, dans le jardin d'un couple qui prépare son mariage, dans la salle d'attente d'un hôpital. C'est une mission vivante, exigeante.</p>
+      <p>Cette ligne, pourtant, je ne l'ai pas reçue d'abord par les livres ni par les bancs de l'enseignement théologique. Elle m'a été donnée par une expérience marquante à l'adolescence, qui m'a confronté à la justice de Dieu et à la grâce souveraine d'une manière que je n'ai jamais oubliée. Je la raconte dans la section qui suit.</p>
+    </section>
+
+    <section class="content-section reveal" id="mon-vecu">
+      <div class="section-eyebrow">Mon témoignage</div>
+      <h2 class="section-title">Une expérience au cœur de mon <em>pastorat</em>.</h2>
+      <div class="image-gallery" style="grid-template-columns: 1fr;">
+        <img src="vecu.jpg" alt="La bête vue à l'adolescence — représentation" class="gallery-image" style="height: 360px;" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.innerHTML='<div style=&quot;background:var(--bg-soft);border:1px dashed var(--gold-pale);height:360px;display:grid;place-items:center;color:var(--ink-soft);font-family:Cormorant Garamond,serif;font-style:italic;font-size:15px;text-align:center;padding:20px;&quot;>Image vecu.jpg — à insérer</div>';">
+      </div>
+      <p>Adolescent, j'ai commis un péché grave qui m'a conduit aux frontières de la mort. Je ne raconte pas le péché lui-même — sa nature appartient à ce qui doit rester entre Dieu et moi. Mais le passage qui suivit, je l'ai gardé intact dans ma mémoire.</p>
+      <p>La nuit s'épaissit autour de mes yeux, plus profonde à chaque instant. Des cris désespérés montèrent à mes oreilles — non pas les miens, mais ceux d'autres âmes que je ne voyais pas. Mon âme commença à brûler. Je sentais ce qui m'attendait, et ce que mon péché m'avait acquis.</p>
+      <p>C'est alors qu'apparut devant moi une bête magnifique. Sa tête était celle d'un lézard. Ses ailes immenses se terminaient par des griffes recourbées. Sa queue se déployait comme un voile de poisson. Elle resplendissait d'une lumière qui chassa la nuit, les cris, les brûlures — tout s'arrêta, comme un temps de pause.</p>
+      <p>Et tandis que cet être se tenait devant moi, une voix se fit entendre — qui ne venait pas de lui, mais d'ailleurs, d'au-dessus :</p>
+      <p class="voix-divine">« Ce fils a péché et témoignera qu'il fut sauvé. »</p>
+      <p>La bête me regarda intensément et s'en alla lentement. Je revins à la vie, en pleine conscience d'avoir été sauvé.</p>
+      <p class="temoignage-final">Ce témoignage vous est livré et vous sera compté le moment venu.</p>
+    </section>
+
+    <section class="content-section reveal" id="mes-services">
+      <div class="section-eyebrow">Mes services pastoraux</div>
+      <h2 class="section-title">Un <em>ministère</em> de terrain.</h2>
+      <div class="image-gallery" style="grid-template-columns: 1fr;">
+        <img src="eglise_services.jpg" alt="Services pastoraux — accompagnement spirituel" class="gallery-image" style="height: 360px;" loading="lazy">
+      </div>
+      <p>Cinq services structurent mon ministère : le baptême, le mariage, les funérailles, le cours de membres et l'accompagnement spirituel. Chacun peut être préparé au presbytère ou à distance, et célébré dans le lieu de votre choix — partout en Belgique.</p>
+      <p>L'accompagnement reste personnalisé quelle que soit votre situation. Votre engagement de foi peut être régulier ou occasionnel, votre demande urgente ou prise dans la durée. C'est à vous d'imprimer le rythme — mon rôle est d'être présent et disponible.</p>
+      <div class="quote-box"><em>« Unitas Lux Christus — Unis dans la Lumière du Christ »</em></div>
+    </section>
+
+    <section class="content-section reveal" id="presbytere">
+      <div class="section-eyebrow">Le presbytère</div>
+      <h2 class="section-title">Presbytère de <em>Rhode-Saint-Genèse</em>.</h2>
+      <div class="centre-container">
+        <img src="centre_exterieur.jpg" alt="Presbytère — vue extérieure" class="gallery-image" loading="lazy">
+        <img src="centre_interieur.jpg" alt="Presbytère — vue intérieure" class="gallery-image" loading="lazy">
+      </div>
+      <p>Le Presbytère de Rhode-Saint-Genèse constitue mon lieu d'accueil et de rassemblement. Situé dans un environnement paisible, cet espace fait office de presbytère et de lieu de recueillement pour mon ministère pastoral.</p>
+      <p><strong>Adresse :</strong> Octave Michotlaan 1, 1640 Rhode-Saint-Genèse (à 10 minutes de Waterloo)</p>
+      <p>Ce presbytère accueille (sur rendez-vous) :</p>
+      <ul>
+        <li>Les préparations de cérémonies</li>
+        <li>Les accompagnements spirituels</li>
+        <li>Certaines cérémonies et activités</li>
+        <li>Les rencontres pastorales</li>
+      </ul>
+      <p>Bien que mes services s'étendent au-delà de cette enceinte, ce presbytère représente un point d'ancrage pour ceux qui souhaitent une rencontre personnelle ou un moment de réflexion dans un cadre serein.</p>
+    </section>
+
+    <section class="content-section reveal" id="ma-communaute">
+      <div class="section-eyebrow">La communauté</div>
+      <h2 class="section-title">La <em>Communauté Baptiste</em> de Belgique.</h2>
+      <div class="image-gallery" style="grid-template-columns: 1fr;">
+        <img src="eglise_communaute.jpg" alt="La Communauté Baptiste de Belgique" class="gallery-image" style="height: 360px;" loading="lazy">
+      </div>
+      <p>La Communauté Baptiste de Belgique (CBB) est la communauté fondée et dirigée par le Pasteur Constant. Elle rassemble l'ensemble des croyants accompagnés dans son ministère — qu'ils aient reçu le baptême, participé à un rite ou une célébration (mariage, funérailles) ou bénéficié d'un accompagnement spirituel — ainsi que les baptisés des Églises reconnues par le Pasteur. En tant que fondateur et pasteur de cette communauté, le Pasteur Constant en assure la direction spirituelle et pastorale.</p>
+      <p>Le baptisme est l'un des grands courants du protestantisme, né au XVII<sup>e</sup> siècle en Angleterre et comptant aujourd'hui plus de 100 millions de croyants à travers le monde. Il se distingue par plusieurs principes fondamentaux : le baptême du croyant — un acte volontaire et conscient de profession de foi, et non un rituel administré aux nourrissons —, l'autorité souveraine des Écritures, le sacerdoce universel de tous les croyants et l'autonomie de chaque communauté locale. Cette autonomie signifie que chaque assemblée baptiste se gouverne librement sous la conduite de l'Esprit Saint, sans dépendre d'une hiérarchie ecclésiastique centralisée.</p>
+      <p>C'est dans cette tradition que s'inscrit naturellement le ministère itinérant. Puisque l'Église baptiste n'est pas définie par un édifice mais par la communion des croyants réunis au nom du Christ, le pasteur baptiste a vocation à aller vers les croyants là où ils se trouvent. Ce ministère de terrain — célébrer un baptême au domicile d'une famille, bénir un mariage dans le lieu choisi par les époux, accompagner un deuil au plus près des proches — est l'expression même de la foi baptiste : l'Église se forme là où des croyants se rassemblent autour de la Parole.</p>
+      <p>Pour en savoir plus sur la CBB, sa confession de foi et la vie protestante en Belgique, rendez-vous sur <a href="https://www.baptistesdebelgique.be" target="_blank" rel="noopener" style="color:var(--gold-dark);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;">baptistesdebelgique.be</a>.</p>
+      <p style="font-size: 14px; color: var(--ink-faint); margin-top: 10px;">En communion fraternelle avec l'<a href="https://www.associationbaptiste.org" target="_blank" rel="noopener" style="color: var(--ink-faint); text-decoration: none; border-bottom: 1px dotted var(--ink-faint);">AEEBLF</a>.</p>
+    </section>
+
+    <section class="ouvrages-section reveal" id="mes-ouvrages">
+      <h2 class="section-title">Mon <em>ouvrage</em></h2>
+      <div class="livres-container" style="grid-template-columns: minmax(280px, 360px); justify-content: center;">
+        <div class="livre-item">
+          <img src="couverture_guidance_spirituelle.png" alt="Couverture Guidance Spirituelle">
+          <p class="livre-titre">Guidance Spirituelle : Le Compas du Chrétien Face aux Défis de la Vie</p>
+          <a href="https://www.amazon.fr/Guidance-Spirituelle-Compas-Chr%C3%A9tien-D%C3%A9fis-ebook/dp/B0CLK8VZJX/" target="_blank" rel="noopener" class="livre-lien">Disponible sur Amazon →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Pasteur Constant</div>
+        <div class="footer-brand-sub">
+          Pasteur baptiste indépendant<br>
+          Communauté Baptiste de Belgique<br>
+          Octave Michotlaan 1<br>
+          1640 Rhode-Saint-Genèse
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="bapteme.html">Baptême</a>
+        <a href="mariage.html">Mariage</a>
+        <a href="enterrement.html">Funérailles</a>
+        <a href="confirmation.html">Cours de Membres</a>
+        <a href="guidance.html">Guidance Spirituelle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Communauté</h4>
+        <a href="presentation.html">Présentation</a>
+        <a href="index.html#communaute">La CBB</a>
+        <a href="https://www.baptistesdebelgique.be" target="_blank" rel="noopener">baptistesdebelgique.be</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+32470781834">0470 78 18 34</a>
+        <a href="mailto:info@reverend.be">info@reverend.be</a>
+        <a href="contact.html">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Pasteur Constant — Tous droits réservés</div>
+      <div class="footer-devise">Unitas Lux Christus</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-    // Script pour le menu hamburger
-    document.getElementById('hamburger-button').addEventListener('click', function(event) {
-    event.stopPropagation();
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', function(event) {
-    const hamburgerButton = document.getElementById('hamburger-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (hamburgerButton && mobileMenu && !hamburgerButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-    mobileMenu.classList.add('hidden');
-    }
-    });
-
-    // Navigation interne avec défilement fluide
-    document.querySelectorAll('.internal-nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    if(targetElement) {
-        window.scrollTo({
-        top: targetElement.offsetTop - 80,
-        behavior: 'smooth'
+      var btn = document.getElementById('hamburger-button');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menu.classList.toggle('hidden');
         });
-    }
-    });
-    });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.add('hidden');
+          }
+        });
+      }
     });
   </script>
+
 </body>
 </html>

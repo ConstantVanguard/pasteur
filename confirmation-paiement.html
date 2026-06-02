@@ -3,391 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Réservation Effectuée</title>
-  <meta name="description" content="Votre réservation a bien été prise en compte. Nous vous remercions pour votre confiance.">
+  <title>Réservation effectuée — Pasteur Constant</title>
+  <meta name="description" content="Votre réservation a bien été prise en compte. Merci de votre confiance.">
   <meta name="robots" content="noindex">
   <link rel="canonical" href="https://www.reverend.be/confirmation-paiement.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Base styles (styles copiés de eglise.html) */
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    .confirmation-wrap {
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      padding: 60px 36px;
     }
-
-    body {
-    font-family: 'Cinzel', serif;
-    background: url("service_background.png") center/cover fixed; 
-    color: #C8B071;
-    min-height: 100vh;
-    position: relative;
-    overflow-y: auto !important;
-    padding-bottom: 60px; /* Espace pour le bandeau du bas */
+    .confirmation-card {
+      max-width: 640px;
+      width: 100%;
+      background: var(--bg);
+      padding: 70px 60px;
+      border: 1px solid var(--gold);
+      text-align: center;
+      position: relative;
     }
-
-    /* Hamburger Menu */
-    .hamburger-menu {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    z-index: 100;
+    .confirmation-card::before,
+    .confirmation-card::after {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-color: var(--gold);
     }
-
-    #hamburger-button {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
+    .confirmation-card::before {
+      top: -10px; left: -10px;
+      border-top: 2px solid; border-left: 2px solid;
     }
-
-    #hamburger-button span {
-    width: 100%;
-    height: 3px;
-    background-color: #C8B071;
-    border-radius: 3px;
-    transition: all 0.3s linear;
+    .confirmation-card::after {
+      bottom: -10px; right: -10px;
+      border-bottom: 2px solid; border-right: 2px solid;
     }
-
-    #mobile-menu {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    padding: 20px;
-    z-index: 5;
-    min-width: 250px;
+    .confirmation-seal {
+      width: 80px;
+      height: 80px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 30px;
+      position: relative;
+      color: var(--gold-dark);
+      font-size: 30px;
     }
-
-    #mobile-menu.hidden {
-    display: none;
+    .confirmation-seal::before {
+      content: "";
+      position: absolute;
+      inset: 5px;
+      border: 1px solid var(--gold-pale);
+      border-radius: 50%;
     }
-
-    #mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    .confirmation-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 18px;
     }
-
-    #mobile-menu li {
-    margin: 15px 0;
-    border-bottom: 1px solid rgba(200, 176, 113, 0.3);
-    padding-bottom: 10px;
+    .confirmation-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(32px, 4.5vw, 44px);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
     }
-
-    #mobile-menu li:last-child {
-    border-bottom: none;
+    .confirmation-title em { font-style: italic; color: var(--gold-dark); }
+    .confirmation-text {
+      font-size: 16.5px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 18px;
     }
-
-    #mobile-menu a {
-    text-decoration: none;
-    color: #C8B071;
-    font-weight: 500;
-    display: block;
-    padding: 5px 10px;
-    transition: all 0.3s ease;
-    }
-
-    #mobile-menu a:hover {
-    color: #fff;
-    }
-
-    /* Page header */
-    .page-header {
-    text-align: center;
-    padding: 70px 0 40px; 
-    position: relative;
-    }
-
-    .title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px; 
-    position: relative;
-    top: -10px;
-    }
-
-    .church-logo {
-    width: 72px;
-    height: auto;
-    margin-bottom: 10px;
-    }
-
-    .page-title {
-    font-family: 'Cinzel', serif;
-    font-size: 42px;
-    color: #C8B071;
-    text-shadow: none; /* Effet de halo supprimé */
-    }
-
-    .page-subtitle { 
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: #C8B071;
-    max-width: 800px;
-    margin: 0 auto;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Main container */
-    .main-container {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 20px;
-    background: url("dark_parchment.png") center/cover;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-    border: 1px solid rgba(200, 176, 113, 0.3);
-    }
-
-    /* Content sections */
-    .content-section {
-    margin-bottom: 30px; 
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    border: 1px solid rgba(200, 176, 113, 0.3);
-    }
-    .content-section:last-child {
-        margin-bottom: 0; 
-    }
-
-
-    .section-title {
-    font-family: 'Cinzel', serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #C8B071;
-    position: relative;
-    padding-bottom: 10px;
-    }
-
-    .section-title:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    background-color: #C8B071;
-    }
-
-    .content-section p { 
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-    color: #fff;
-    }
-    
-    /* Bottom bar */
-    .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 30px;
-    z-index: 100;
-    border-top: 1px solid rgba(200, 176, 113, 0.3);
-    }
-
-    .nav-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    position: relative;
-    }
-
-    .nav-item {
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    color: #C8B071;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    margin: 0 20px;
-    }
-
-    .nav-links a.nav-item {
-    text-decoration: none;
-    }
-
-    .nav-links a.nav-item:first-child {
-    position: absolute;
-    left: 0;
-    }
-
-    .nav-links a.nav-item:last-child {
-    position: absolute;
-    right: 0;
-    }
-
-    .nav-item:hover {
-    color: #fff;
-    }
-
-    /* Responsive design */
-    @media (max-width: 992px) {
-    .church-logo { width: 54px; }
-    .page-title { font-size: 36px; }
-    .page-subtitle { font-size: 18px; }
-    }
-
-    @media (max-width: 768px) {
-    .church-logo { width: 48px; }
-    .page-header { padding: 70px 0 30px; }
-    .page-title { font-size: 32px; }
-    .section-title { font-size: 24px; }
-    .content-section p { font-size: 16px !important; } 
-    .bottom-bar { padding: 8px 15px; background-color: rgba(0, 0, 0, 0.6); }
-    .nav-links { flex-direction: row; justify-content: space-between; width: 100%; transform: none; }
-    .nav-links a.nav-item, .nav-links div.nav-item { position: static !important; margin: 0; font-size: 0.85rem; }
-    }
-
-    @media (max-width: 480px) {
-    .church-logo { width: 36px; }
-    .page-header { padding: 60px 0 20px; }
-    .page-title { font-size: 28px; }
-    .page-subtitle { font-size: 16px; }
-    .section-title { font-size: 22px; }
-    .content-section p { font-size: 15px !important; } 
-    .bottom-bar { padding: 6px 10px; background-color: rgba(0, 0, 0, 0.5); }
-    .nav-links a.nav-item, .nav-links div.nav-item { font-size: 0.75rem; }
-    }
-
-    /* Styles spécifiques pour la page de confirmation */
-    .confirmation-message-section {
-      padding-top: 40px; 
-      padding-bottom: 40px;
-      text-align: center; 
-    }
-    .confirmation-message-section .main-confirmation-text {
-      font-family: 'Cinzel', serif; 
-      font-size: 2.5em; 
-      color: #C8B071;   
-      font-weight: bold;
+    .confirmation-signature {
       margin-top: 30px;
-      margin-bottom: 30px; 
-      line-height: 1.3;
+      padding-top: 30px;
+      border-top: 1px solid var(--gold-pale);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--ink);
     }
-    .confirmation-message-section .additional-info {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.0em;
-      color: #fff;
-      margin-top: 20px;
-      line-height: 1.6;
+    .confirmation-actions {
+      margin-top: 40px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .confirmation-message-section .additional-info p {
-        font-size: 1em; 
-        margin-bottom: 10px; 
-    }
-    .confirmation-message-section .additional-info em { /* Style pour la signature */
-        color: #C8B071; 
-        font-style: italic; 
-    }
-    .main-container .content-section .section-title { 
-        text-align: center;
-    }
-    .main-container .content-section .section-title:after { 
-        left: 50%;
-        transform: translateX(-50%);
+    @media (max-width: 640px) {
+      .confirmation-card { padding: 40px 24px; }
     }
   </style>
 </head>
 <body>
-  <div class="hamburger-menu">
-    <button id="hamburger-button" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-    </button>
-    <nav id="mobile-menu" class="hidden">
-    <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="bapteme.html">Baptême</a></li>
-    <li><a href="mariage.html">Mariage</a></li>
-    <li><a href="enterrement.html">Funérailles</a></li>
-    <li><a href="confirmation.html">Confirmation</a></li>
-    <li><a href="guidance.html">Accompagnement Spirituel</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
+
+  <div class="top-strip">
+    Communauté Baptiste de Belgique
   </div>
 
-  <header class="page-header">
-    <div class="title-container">
-      <img src="logo2.png" alt="Logo Ministère du Christ-Roi" class="church-logo">
-      <h1 class="page-title">Confirmation de Réservation</h1>
-    </div>
-    </header>
-
-  <div class="main-container">
-    <div id="confirmation-message" class="content-section confirmation-message-section">
-      <p class="main-confirmation-text">Votre date est bien réservée!</p>
-      <div class="additional-info">
-        <p>
-          Nous vous remercions sincèrement pour votre confiance.
-        </p>
-        <p>
-          Si vous avez la moindre question ou si vous souhaitez apporter une précision,
-          n'hésitez pas à nous joindre via notre page <a href="contact.html" style="color: #C8B071; text-decoration: underline;">Contact</a>.
-        </p>
-        <p>
-          Avec nos salutations fraternelles,
-        </p>
-        <p>
-          <em>Le secrétariat du Révérend Constant</em>
-        </p>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-seal"><span class="brand-seal-letter">C</span></div>
+        <div class="brand-text">
+          <div class="brand-title">Pasteur Constant</div>
+          <div class="brand-sub">Communauté Baptiste de Belgique</div>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a href="presentation.html">Présentation</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="hamburger-menu">
+        <button id="hamburger-button" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="mobile-menu" class="hidden">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="bapteme.html">Baptême</a></li>
+            <li><a href="mariage.html">Mariage</a></li>
+            <li><a href="enterrement.html">Funérailles</a></li>
+            <li><a href="confirmation.html">Cours de Membres</a></li>
+            <li><a href="guidance.html">Accompagnement Spirituel</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </div>
+  </header>
 
-  <div class="bottom-bar">
-    <div class="nav-links">
-    <a href="index.html" class="nav-item">Révérend Constant</a>
-    <a href="eglise.html" class="nav-item">Notre Ministère</a>
-    <a href="contact.html" class="nav-item">Contact</a>
+  <main class="confirmation-wrap">
+    <div class="confirmation-card reveal">
+      <div class="confirmation-seal">✓</div>
+      <div class="confirmation-eyebrow">Confirmation de réservation</div>
+      <h1 class="confirmation-title">Votre date est bien <em>réservée</em> !</h1>
+      <p class="confirmation-text">Nous vous remercions sincèrement pour votre confiance.</p>
+      <p class="confirmation-text">Si vous avez la moindre question ou si vous souhaitez apporter une précision, n'hésitez pas à nous joindre via notre <a href="contact.html" style="color:var(--gold-dark);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;">page de contact</a>.</p>
+      <div class="confirmation-signature">
+        Avec nos salutations fraternelles,<br>
+        — Le secrétariat du Pasteur Constant
+      </div>
+      <div class="confirmation-actions">
+        <a href="index.html" class="btn-secondary">Retour à l'accueil</a>
+        <a href="contact.html" class="btn-primary" style="width:auto;">Nous contacter</a>
+      </div>
     </div>
-  </div>
+  </main>
 
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Pasteur Constant</div>
+        <div class="footer-brand-sub">
+          Pasteur baptiste indépendant<br>
+          Communauté Baptiste de Belgique<br>
+          Octave Michotlaan 1<br>
+          1640 Rhode-Saint-Genèse
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="bapteme.html">Baptême</a>
+        <a href="mariage.html">Mariage</a>
+        <a href="enterrement.html">Funérailles</a>
+        <a href="confirmation.html">Cours de Membres</a>
+        <a href="guidance.html">Guidance Spirituelle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Communauté</h4>
+        <a href="presentation.html">Présentation</a>
+        <a href="index.html#communaute">La CBB</a>
+        <a href="https://www.baptistesdebelgique.be" target="_blank" rel="noopener">baptistesdebelgique.be</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+32470781834">0470 78 18 34</a>
+        <a href="mailto:info@reverend.be">info@reverend.be</a>
+        <a href="contact.html">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Pasteur Constant — Tous droits réservés</div>
+      <div class="footer-devise">Unitas Lux Christus</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const hamburgerButton = document.getElementById('hamburger-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (hamburgerButton && mobileMenu) {
-        hamburgerButton.addEventListener('click', function(event) {
-          event.stopPropagation();
-          mobileMenu.classList.toggle('hidden');
+      var btn = document.getElementById('hamburger-button');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menu.classList.toggle('hidden');
         });
-
-        document.addEventListener('click', function(event) {
-          if (hamburgerButton && mobileMenu && !hamburgerButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.add('hidden');
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.add('hidden');
           }
         });
       }
     });
   </script>
+
 </body>
 </html>

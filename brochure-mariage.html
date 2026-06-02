@@ -1,241 +1,353 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brochure de Mariage - Pasteur Constant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #FDFBF8;
-            color: #5D5D5D;
-            font-size: 16px;
-            line-height: 1.7;
-        }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #FFFFFF;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #EAEAEA;
-        }
-        .header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1508318043324-31e344267602?q=80&w=1974&auto=format&fit=crop') no-repeat center center;
-            background-size: cover;
-            color: #FFFFFF;
-        }
-        .header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3em;
-            font-weight: 700;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-        .header h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5em;
-            font-weight: 400;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-        .section {
-            padding: 30px 20px;
-            border-bottom: 1px solid #EAEAEA;
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2em;
-            font-weight: 600;
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: #C8B071;
-            margin: 10px auto 0;
-        }
-        .intro p {
-            font-style: italic;
-            text-align: center;
-            font-size: 1.1em;
-            color: #777;
-        }
-        .two-columns {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-        .two-columns .col {
-            flex: 1;
-        }
-        .two-columns img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        h4 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3em;
-            color: #333;
-            margin-top: 0;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 15px;
-        }
-        ul li::before {
-            content: '🕊️';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #C8B071;
-        }
-        .pastor-img {
-            border-radius: 5px;
-            filter: sepia(0.2) contrast(0.9);
-        }
-        .price-box {
-            background-color: #F9F9F9;
-            border: 1px solid #EAEAEA;
-            border-left: 5px solid #C8B071;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        .price-box p {
-            margin: 0;
-        }
-        .price-box .price {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #333;
-        }
-        .footer {
-            text-align: center;
-            padding: 30px 20px;
-            font-style: italic;
-        }
-        .info-note {
-            background-color: #fffbe5;
-            border: 1px solid #ffeeba;
-            color: #856404;
-            padding: 15px;
-            margin: 20px;
-            text-align: center;
-            border-radius: 5px;
-        }
-        @media (max-width: 768px) {
-            .two-columns {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brochure de mariage — Pasteur Constant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAFAF7;
+      --bg-soft: #F0EDE3;
+      --ink: #162338;
+      --ink-soft: #4A5468;
+      --gold: #B89A56;
+      --gold-pale: #D4C9A8;
+      --gold-dark: #97804A;
+      --rule: #E2DDCB;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .brochure-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0;
+      background: var(--bg);
+      box-shadow: 0 0 60px rgba(22, 35, 56, 0.08);
+    }
+
+    .info-banner {
+      background: var(--ink);
+      color: var(--gold-pale);
+      padding: 14px 36px;
+      font-size: 13px;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    .info-banner strong { color: var(--gold); }
+
+    .brochure-hero {
+      position: relative;
+      height: 420px;
+      background-image: linear-gradient(rgba(22, 35, 56, 0.55), rgba(22, 35, 56, 0.55)), url("https://images.unsplash.com/photo-1508318043324-31e344267602?q=80&w=1974&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      color: var(--bg);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+    .brochure-hero::before,
+    .brochure-hero::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .brochure-hero::before { top: 50px; }
+    .brochure-hero::after { bottom: 50px; }
+    .brochure-hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .brochure-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .brochure-hero h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(22px, 3vw, 28px);
+      color: var(--gold-pale);
+      letter-spacing: 1px;
+    }
+
+    .brochure-section {
+      padding: 60px 60px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .brochure-section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 30px;
+      color: var(--ink);
+      margin-bottom: 24px;
+      position: relative;
+      padding-bottom: 16px;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+    }
+    .section-title em { font-style: italic; }
+
+    .brochure-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+
+    .brochure-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .brochure-grid.reversed {
+      grid-template-columns: 1.4fr 1fr;
+    }
+    .brochure-grid img {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border: 1px solid var(--gold);
+      padding: 8px;
+      background: var(--bg);
+    }
+
+    .etape {
+      margin-bottom: 28px;
+    }
+    .etape h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .ceremonie-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .ceremonie-list li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 14px;
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+    }
+    .ceremonie-list li::before {
+      content: "🕊";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-size: 14px;
+    }
+    .ceremonie-list li strong {
+      color: var(--ink);
+      font-weight: 600;
+      display: inline;
+    }
+
+    .price-box {
+      background: var(--ink);
+      color: var(--bg);
+      padding: 36px 32px;
+      border-top: 3px solid var(--gold);
+      margin-top: 26px;
+      text-align: center;
+    }
+    .price-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 26px;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .price-box p {
+      color: var(--gold-pale);
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-bottom: 0;
+      opacity: 0.9;
+    }
+
+    .brochure-footer {
+      background: var(--ink);
+      color: var(--gold-pale);
+      padding: 50px 60px;
+      text-align: center;
+    }
+    .brochure-footer h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+    .brochure-footer p {
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+      opacity: 0.95;
+    }
+    .brochure-footer em {
+      color: var(--gold);
+      font-style: normal;
+      font-weight: 500;
+    }
+    .brochure-footer-coords {
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(184, 154, 86, 0.25);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    @media print {
+      .info-banner { display: none; }
+      .brochure-wrap { box-shadow: none; }
+      .brochure-section { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 720px) {
+      .brochure-section { padding: 40px 30px; }
+      .brochure-grid { grid-template-columns: 1fr; gap: 24px; }
+      .brochure-grid.reversed { grid-template-columns: 1fr; }
+      .brochure-hero { height: 320px; padding: 30px; }
+      .brochure-footer { padding: 40px 24px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="info-note">
-        <strong>Note importante :</strong> Si les images ne s'affichent pas, c'est une mesure de sécurité normale de votre navigateur car le fichier est ouvert depuis votre ordinateur. Soyez rassuré, les liens sont corrects et les images apparaîtront parfaitement lorsque ce fichier sera placé sur un site internet.
+
+  <div class="brochure-wrap">
+
+    <div class="info-banner">
+      <strong>Note :</strong> Si les images ne s'affichent pas, c'est une mesure de sécurité normale de votre navigateur car le fichier est ouvert depuis votre ordinateur. Les images apparaîtront correctement lorsque ce fichier sera placé sur le site internet.
     </div>
 
-    <div class="container">
-        <header class="header">
-            <h1>Célébrer Votre Amour</h1>
-            <h2>Bénir Votre Union</h2>
-        </header>
+    <section class="brochure-hero">
+      <div>
+        <div class="brochure-hero-eyebrow">Pasteur Constant — Belgique</div>
+        <h1>Célébrer votre amour</h1>
+        <h2>Bénir votre union</h2>
+      </div>
+    </section>
 
-        <section class="section intro">
-            <h3 class="section-title">Chers fiancés,</h3>
-            <p>
-                Toutes mes félicitations pour votre projet de mariage ! Vous êtes sur le point de vivre l'un des moments les plus sacrés et les plus joyeux de votre vie : un engagement profond l'un envers l'autre, scellé devant Dieu et vos proches. Ma vocation est de vous accompagner pour que cette cérémonie soit le reflet fidèle de votre couple, de votre histoire et de la dimension spirituelle que vous souhaitez donner à votre union.
-            </p>
-        </section>
+    <section class="brochure-section">
+      <h2 class="section-title">Chers <em>fiancés</em>,</h2>
+      <p>Toutes mes félicitations pour votre projet de mariage. Vous êtes sur le point de vivre l'un des moments les plus sacrés et les plus joyeux de votre vie : un engagement profond l'un envers l'autre, scellé devant Dieu et vos proches.</p>
+      <p>Ma vocation est de vous accompagner pour que cette cérémonie soit le reflet fidèle de votre couple, de votre histoire, et de la dimension spirituelle que vous souhaitez donner à votre union — dans la tradition baptiste évangélique.</p>
+    </section>
 
-        <section class="section">
-            <h3 class="section-title">Notre Cheminement Ensemble</h3>
-            <div class="two-columns">
-                <div class="col">
-                    <img src="https://images.unsplash.com/photo-1522992319-35145b205883?q=80&w=1887&auto=format&fit=crop" alt="Image de deux tasses de café, symbolisant une rencontre chaleureuse.">
-                </div>
-                <div class="col">
-                    <h4>Étape 1 : Notre Première Rencontre</h4>
-                    <p>Nous prendrons le temps de faire connaissance lors d'un rendez-vous à mon presbytère de Rhode-Saint-Genèse. Ce sera l'occasion pour moi de découvrir votre histoire, de comprendre votre vision du mariage et d'échanger sur les valeurs de l'engagement chrétien.</p>
-                    
-                    <h4>Étape 2 : La Préparation de Votre Cérémonie</h4>
-                    <p>Lors de notre seconde rencontre, nous construirons le déroulement de votre célébration. Nous choisirons les textes bibliques, les prières, et même cette chanson si particulière qui vous est chère. Je vous guiderai également, si vous le souhaitez, dans la rédaction de vos vœux personnels.</p>
-                </div>
-            </div>
-        </section>
+    <section class="brochure-section">
+      <h2 class="section-title">Notre <em>cheminement</em> ensemble</h2>
+      <div class="brochure-grid">
+        <img src="https://images.unsplash.com/photo-1522992319-35145b205883?q=80&w=1887&auto=format&fit=crop" alt="Image de deux tasses de café symbolisant une rencontre chaleureuse">
+        <div>
+          <div class="etape">
+            <h3>Étape 1 — Notre première rencontre</h3>
+            <p>Nous prendrons le temps de faire connaissance lors d'un rendez-vous à mon presbytère de Rhode-Saint-Genèse. Ce sera l'occasion pour moi de découvrir votre histoire, de comprendre votre vision du mariage et d'échanger sur les valeurs de l'engagement chrétien.</p>
+          </div>
+          <div class="etape">
+            <h3>Étape 2 — La préparation de votre cérémonie</h3>
+            <p>Lors de notre seconde rencontre, nous construirons le déroulement de votre célébration. Nous choisirons les textes bibliques, les prières, et même cette chanson si particulière qui vous est chère. Je vous guiderai également, si vous le souhaitez, dans la rédaction de vos vœux personnels.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="section">
-            <h3 class="section-title">Le Cœur de Votre Cérémonie</h3>
-             <div class="two-columns">
-                <div class="col">
-                    <p>Votre cérémonie sera un moment sacré, rythmé par des étapes symboliques et personnalisées.</p>
-                    <ul>
-                        <li><strong>Accueil & Musique d'entrée :</strong> Lancement de la célébration par un mot de bienvenue et la chanson qui marquera votre entrée.</li>
-                        <li><strong>Lecture Biblique :</strong> Un texte choisi ensemble, porté par la voix d'un proche.</li>
-                        <li><strong>Prière Nuptiale :</strong> Un temps de recueillement et une prière écrite pour vous, afin de confier votre union à Dieu.</li>
-                        <li><strong>Échange des Vœux :</strong> Le moment central où vous prononcerez votre "Oui" et vos promesses personnelles.</li>
-                        <li><strong>Échange des Alliances :</strong> Le symbole visible et éternel de votre engagement.</li>
-                        <li><strong>Bénédiction & Proclamation :</strong> Je vous déclarerai mari et femme sous le regard de Dieu et de vos invités.</li>
-                        <li><strong>Signature des Registres :</strong> L'acte officiel, signé avec vos témoins, pour conclure ce moment solennel avant que la fête ne commence !</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <img src="https://images.unsplash.com/photo-1604924298198-8a82a0337f6e?q=80&w=1887&auto=format&fit=crop" class="pastor-img" alt="Image stylisée d'un pasteur de dos en soutane, grand, mince et brun.">
-                </div>
-            </div>
-        </section>
+    <section class="brochure-section">
+      <h2 class="section-title">Le cœur de <em>votre cérémonie</em></h2>
+      <div class="brochure-grid reversed">
+        <div>
+          <p>Votre cérémonie sera un moment sacré, rythmé par des étapes symboliques et personnalisées.</p>
+          <ul class="ceremonie-list">
+            <li><strong>Accueil &amp; musique d'entrée :</strong> lancement de la célébration par un mot de bienvenue et la chanson qui marquera votre entrée.</li>
+            <li><strong>Lecture biblique :</strong> un texte choisi ensemble, porté par la voix d'un proche.</li>
+            <li><strong>Prière nuptiale :</strong> un temps de recueillement et une prière écrite pour vous, afin de confier votre union à Dieu.</li>
+            <li><strong>Échange des vœux :</strong> le moment central où vous prononcerez votre « Oui » et vos promesses personnelles.</li>
+            <li><strong>Échange des alliances :</strong> le symbole visible et éternel de votre engagement.</li>
+            <li><strong>Bénédiction &amp; proclamation :</strong> je vous déclarerai mari et femme sous le regard de Dieu et de vos invités.</li>
+            <li><strong>Signature des registres :</strong> l'acte officiel, signé avec vos témoins, pour conclure ce moment solennel avant que la fête ne commence.</li>
+          </ul>
+        </div>
+        <img src="https://images.unsplash.com/photo-1604924298198-8a82a0337f6e?q=80&w=1887&auto=format&fit=crop" alt="Image stylisée d'un pasteur de dos">
+      </div>
+    </section>
 
-        <section class="section">
-            <h3 class="section-title">Informations Pratiques</h3>
-            <div class="two-columns">
-                 <div class="col">
-                    <img src="https://images.unsplash.com/photo-1595330353198-a5de4292215c?q=80&w=1887&auto=format&fit=crop" alt="Image de deux alliances sur une Bible.">
-                </div>
-                <div class="col">
-                    <h4>Le Lieu de Votre Célébration</h4>
-                    <p>Un jardin, un château, une grange ou une chapelle... Je célèbre votre union dans le lieu qui a du sens pour vous, celui où votre histoire pourra pleinement résonner.</p>
-                    <h4>À prévoir pour la Cérémonie</h4>
-                    <p>Nous aurons simplement besoin d'un témoin pour chacun, d'un lecteur, de votre acte de mariage civil, d'un autel (ou une table) pour la Bible et d'une sonorisation.</p>
-                    <div class="price-box">
-                        <p class="price">Forfait "Célébration" à 350 €</p>
-                        <p>Ce forfait inclut nos rencontres préparatoires, la création sur mesure de votre cérémonie, ma présence le jour J et la délivrance de votre acte de mariage.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="brochure-section">
+      <h2 class="section-title">Informations <em>pratiques</em></h2>
+      <div class="brochure-grid">
+        <img src="https://images.unsplash.com/photo-1595330353198-a5de4292215c?q=80&w=1887&auto=format&fit=crop" alt="Image de deux alliances sur une Bible">
+        <div>
+          <div class="etape">
+            <h3>Le lieu de votre célébration</h3>
+            <p>Un jardin, un château, une grange ou une chapelle… Je célèbre votre union dans le lieu qui a du sens pour vous, celui où votre histoire pourra pleinement résonner.</p>
+          </div>
+          <div class="etape">
+            <h3>À prévoir pour la cérémonie</h3>
+            <p>Nous aurons simplement besoin d'un témoin pour chacun, d'un lecteur, de votre acte de mariage civil, d'un autel (ou une table) pour la Bible, et d'une sonorisation.</p>
+          </div>
+          <div class="price-box">
+            <h3>Forfait « Célébration » à 850 €</h3>
+            <p>Ce forfait inclut nos rencontres préparatoires, la création sur mesure de votre cérémonie, ma présence le jour J et la délivrance de votre acte de mariage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <footer class="footer">
-            <p>
-                Je suis disponible les <strong>lundis, jeudis et samedis</strong>. N'hésitez pas à me contacter pour réserver votre date.<br>
-                J'ai hâte de vous rencontrer et de cheminer avec vous vers votre grand jour.
-            </p>
-        </footer>
+    <div class="brochure-footer">
+      <h3>J'ai hâte de vous rencontrer</h3>
+      <p>Je suis disponible les <em>lundis, jeudis et samedis</em>. N'hésitez pas à me contacter pour réserver votre date.</p>
+      <p>Que cette préparation soit déjà une étape spirituelle riche pour vous deux, et que votre mariage soit un témoignage lumineux de la fidélité du Christ.</p>
+      <div class="brochure-footer-coords">
+        Pasteur Constant<br>
+        <a href="tel:+32470781834" style="color: var(--gold); text-decoration: none;">0470 78 18 34</a> &nbsp;·&nbsp; <a href="mailto:info@reverend.be" style="color: var(--gold); text-decoration: none;">info@reverend.be</a><br>
+        <span style="font-size: 14px; opacity: 0.85;">www.reverend.be</span>
+      </div>
     </div>
+
+  </div>
 
 </body>
 </html>
-

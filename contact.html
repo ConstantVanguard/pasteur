@@ -1,472 +1,325 @@
-h<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacter un Officiant pour Cérémonie Chrétienne en Belgique</title>
-  <meta name="description" content="Prenez contact pour toute question ou pour organiser votre cérémonie chrétienne (mariage, baptême...). Services disponibles en Belgique et par visioconférence.">
+  <title>Contacter le Pasteur Constant — Pasteur baptiste en Belgique</title>
+  <meta name="description" content="Prenez contact pour toute question ou pour organiser votre cérémonie chrétienne baptiste (mariage, baptême, funérailles). Services disponibles en Belgique et par visioconférence.">
   <link rel="canonical" href="https://www.reverend.be/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzehl:wght@400;700h&family=Playfair+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* Styles spécifiques à la page contact */
-    body {
-      overflow-y: auto !important; /* Permet le défilement vertical */
-      padding-bottom: 60px; /* Espace pour le bandeau du bas */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      margin-top: 40px;
     }
-    
-    /* Réduction de la taille du logo UNIQUEMENT sur mobile - AUGMENTÉE DE 50% */
-    @media (max-width: 480px) {
-      .logo img {
-        height: 60px !important; /* Augmenté de 40px à 60px */
-      }
+    .contact-card {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      padding: 40px 36px;
+      border-left: 3px solid var(--gold);
     }
-    
-    @media (max-width: 768px) and (min-width: 481px) {
-      .logo img {
-        height: 75px !important; /* Augmenté de 50px à 75px */
-      }
+    .contact-card.dark {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--gold);
     }
-    
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 0;
-      height: calc(100% - 20px);
-      align-items: stretch;
+    .contact-card.dark .form-group label {
+      color: var(--gold);
     }
-    
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid rgba(200, 176, 113, 0.3);
-      border-left: 4px solid #C8B071;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .contact-form {
-      flex: 2;
-      min-width: 300px;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid rgba(200, 176, 113, 0.3);
-      border-left: 4px solid #C8B071;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .section-title {
-      font-family: 'Cinzel', serif;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #C8B071;
+    .contact-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 26px;
+      margin-bottom: 28px;
+      color: inherit;
       position: relative;
-      padding-bottom: 10px;
+      padding-bottom: 14px;
     }
-    
-    .section-title:after {
+    .contact-section-title::after {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 60px;
+      width: 50px;
       height: 2px;
-      background-color: #C8B071;
+      background: var(--gold);
     }
-    
-    .contact-info p {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-    
-    .contact-info .contact-method {
+    .contact-method {
       display: flex;
-      align-items: center;
-      margin-bottom: 15px;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
     }
-    
-    .contact-info .contact-method i {
-      margin-right: 10px;
-      color: #C8B071;
-      font-size: 20px;
+    .contact-method-icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      color: var(--gold-dark);
+      font-size: 16px;
     }
-    
-    .contact-info .contact-label {
-      color: #C8B071;
-      font-weight: normal;
+    .contact-method-text {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--ink);
     }
-    
-    .contact-info .services-label {
-      color: #C8B071;
-      font-weight: normal;
-    }
-    
-    /* Form styling */
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
+    .contact-method-text .label {
       display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #C8B071;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 4px;
+      font-weight: 600;
     }
-    
-    .form-group input, 
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid rgba(200, 176, 113, 0.3);
-      background-color: rgba(10, 5, 2, 0.7);
-      border-radius: 5px;
-      font-size: 16px;
-      color: #fff;
-      font-family: 'Playfair Display', serif;
+    .contact-method-text a {
+      color: var(--ink);
+      text-decoration: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
     }
-    
-    .form-group textarea {
-      min-height: 150px;
-      resize: vertical;
+    .contact-method-text a:hover {
+      color: var(--gold-dark);
     }
-    
-    .btn {
-      background-color: #C8B071;
-      color: #000;
-      border: none;
-      padding: 14px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Cinzel', serif;
-      margin-top: auto;
+    .contact-services {
+      margin-top: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
     }
-    
-    .btn:hover {
-      background-color: #b8a061;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    .contact-services h3 {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 14px;
+      font-weight: 600;
     }
-    
-    .page-header {
-      text-align: center;
-      padding: 60px 0 20px;
-      position: relative;
-      margin-bottom: 0;
-    }
-    
-    .page-title {
-      font-family: 'Cinzel', serif;
-      font-size: 42px;
-      color: #C8B071;
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: 0;
-    }
-    
-    .main-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      background: url("dark_parchment.png") center/cover;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-      position: relative;
-      border: 1px solid rgba(200, 176, 113, 0.3);
-      margin-bottom: 80px; /* Augmenté pour laisser place au bandeau */
-      min-height: 600px;
-      max-height: 750px;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    /* Hamburger Menu */
-    .hamburger-menu {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      z-index: 100;
-    }
-    
-    #hamburger-button {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 21px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 10;
-    }
-    
-    #hamburger-button span {
-      width: 100%;
-      height: 3px;
-      background-color: #f5e7c1;
-      border-radius: 3px;
-      transition: all 0.3s linear;
-    }
-    
-    #mobile-menu {
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      border-radius: 5px;
-      padding: 20px;
-      z-index: 5;
-      min-width: 250px;
-    }
-    
-    #mobile-menu.hidden {
-      display: none;
-    }
-    
-    #mobile-menu ul {
+    .contact-services ul {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
-    
-    #mobile-menu li {
-      margin: 15px 0;
-      border-bottom: 1px solid rgba(200, 176, 113, 0.3);
-      padding-bottom: 10px;
-    }
-    
-    #mobile-menu li:last-child {
-      border-bottom: none;
-    }
-    
-    #mobile-menu a {
-      text-decoration: none;
-      color: #C8B071;
-      font-weight: 500;
-      display: block;
-      padding: 5px 10px;
-      transition: all 0.3s ease;
-    }
-    
-    #mobile-menu a:hover {
-      color: #fff;
-    }
-    
-    /* Bottom bar - identique à la page église */
-    .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 30px;
-      z-index: 100;
-      border-top: 1px solid rgba(200, 176, 113, 0.3);
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      max-width: 800px;
+    .contact-services li {
       position: relative;
+      padding-left: 24px;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+      line-height: 1.5;
     }
-
-    .nav-item {
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      color: #C8B071;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin: 0 20px;
-    }
-
-    /* Suppression du soulignement pour tous les liens */
-    .nav-links a.nav-item {
-      text-decoration: none;
-    }
-
-    .nav-links a.nav-item:first-child {
+    .contact-services li::before {
+      content: "";
       position: absolute;
       left: 0;
+      top: 11px;
+      width: 12px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .contact-form-fields {
+      margin-bottom: 0;
+    }
+    .contact-card.dark .form-group input,
+    .contact-card.dark .form-group textarea {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(184, 154, 86, 0.3);
+      color: var(--bg);
+    }
+    .contact-card.dark .form-group input:focus,
+    .contact-card.dark .form-group textarea:focus {
+      border-color: var(--gold);
+      background: rgba(184, 154, 86, 0.1);
+    }
+    .contact-card.dark .form-group input::placeholder,
+    .contact-card.dark .form-group textarea::placeholder {
+      color: var(--gold-pale);
+      opacity: 0.5;
     }
 
-    .nav-links a.nav-item:last-child {
-      position: absolute;
-      right: 0;
-    }
-
-    .nav-item:hover {
-      color: #fff;
-    }
-    
-    /* Responsive design */
-    @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-      }
-      
-      .contact-info, 
-      .contact-form {
-        flex: 1 1 100%;
-      }
-      
-      .main-container {
-        min-height: auto;
-        max-height: none;
-      }
-      
-      /* Bandeau bas identique à la page église sur mobile */
-      .bottom-bar {
-        display: flex;
-        padding: 8px 15px;
-        background-color: rgba(0, 0, 0, 0.6);
-      }
-      
-      .nav-links {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        transform: none;
-      }
-      
-      .nav-links a.nav-item {
-        position: static !important;
-        margin: 0;
-        font-size: 0.85rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      /* Bandeau bas identique à la page église sur petit mobile */
-      .bottom-bar {
-        padding: 6px 10px;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-      
-      .nav-links a.nav-item {
-        font-size: 0.75rem;
-      }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+      .contact-card { padding: 30px 24px; }
     }
   </style>
 </head>
 <body>
-  <div class="logo">
-    <a href="index.html">
-      <img src="logo.png" alt="Logo Pasteur Constant">
-    </a>
+
+  <div class="top-strip">
+    Communauté Baptiste de Belgique
   </div>
 
-  <div class="hamburger-menu">
-    <button id="hamburger-button" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="mobile-menu" class="hidden">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="bapteme.html">Baptême</a></li>
-        <li><a href="mariage.html">Mariage</a></li>
-        <li><a href="enterrement.html">Funérailles</a></li>
-        <li><a href="confirmation.html">Confirmation</a></li>
-        <li><a href="guidance.html">Accompagnement Spirituel</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <header class="page-header">
-    <h1 class="page-title">Contact</h1>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-seal"><span class="brand-seal-letter">C</span></div>
+        <div class="brand-text">
+          <div class="brand-title">Pasteur Constant</div>
+          <div class="brand-sub">Communauté Baptiste de Belgique</div>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Accueil</a>
+        <a href="presentation.html">Présentation</a>
+        <a href="index.html#services">Services</a>
+      </nav>
+      <div class="hamburger-menu">
+        <button id="hamburger-button" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="mobile-menu" class="hidden">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="bapteme.html">Baptême</a></li>
+            <li><a href="mariage.html">Mariage</a></li>
+            <li><a href="enterrement.html">Funérailles</a></li>
+            <li><a href="confirmation.html">Cours de Membres</a></li>
+            <li><a href="guidance.html">Accompagnement Spirituel</a></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <div class="main-container">
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3 class="section-title">Coordonnées</h3>
+  <header class="page-header">
+    <div class="page-eyebrow">Prendre contact</div>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-subtitle">À votre écoute pour toute question, projet ou réservation</p>
+  </header>
+
+  <main class="page-main">
+
+    <div class="contact-grid">
+
+      <div class="contact-card reveal">
+        <h2 class="contact-section-title">Coordonnées</h2>
+
         <div class="contact-method">
-          <i class="fas fa-phone"></i>
-          <p><span class="contact-label">Téléphone :</span> 0470 78 18 34</p>
+          <div class="contact-method-icon">☎</div>
+          <div class="contact-method-text">
+            <span class="label">Téléphone</span>
+            <a href="tel:+32470781834">0470 78 18 34</a>
+          </div>
         </div>
+
         <div class="contact-method">
-          <i class="fas fa-envelope"></i>
-          <p><span class="contact-label">Email :</span> info@reverend.be</p>
+          <div class="contact-method-icon">✉</div>
+          <div class="contact-method-text">
+            <span class="label">Courriel</span>
+            <a href="mailto:info@reverend.be">info@reverend.be</a>
+          </div>
         </div>
-        <p style="margin-top: 20px;">
-          <span class="services-label">Services disponibles :</span>
-        </p>
-        <p>• à mon presbytère (Octave Michotlaan 1, 1640 Rhode-Saint-Genèse, à 10 minutes de Waterloo)</p>
-        <p>• en déplacement (toute la Belgique)</p>
-        <p>• par visioconférence (whatsapp video)</p>
+
+        <div class="contact-method">
+          <div class="contact-method-icon">⌂</div>
+          <div class="contact-method-text">
+            <span class="label">Presbytère</span>
+            <span style="font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--ink);">Octave Michotlaan 1<br>1640 Rhode-Saint-Genèse</span>
+          </div>
+        </div>
+
+        <div class="contact-services">
+          <h3>Services disponibles</h3>
+          <ul>
+            <li>Au presbytère (à 10 minutes de Waterloo)</li>
+            <li>En déplacement (toute la Belgique)</li>
+            <li>Par visioconférence (WhatsApp vidéo)</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="contact-form">
-        <h3 class="section-title">Formulaire de contact</h3>
-        <form action="https://formspree.io/f/xjkyzbek" method="POST">
+
+      <div class="contact-card dark reveal delay-1">
+        <h2 class="contact-section-title" style="color: var(--gold);">Formulaire de contact</h2>
+
+        <form action="https://formspree.io/f/xjkyzbek" method="POST" class="contact-form-fields">
           <div class="form-group">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
           </div>
           <div class="form-group">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Courriel</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
           </div>
           <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <label for="phone">Téléphone (optionnel)</label>
+            <input type="tel" id="phone" name="phone" placeholder="0470 12 34 56">
           </div>
-          <button type="submit" class="btn">Envoyer</button>
+          <div class="form-group">
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Décrivez votre demande, votre projet, ou simplement votre question…" required></textarea>
+          </div>
+          <button type="submit" class="btn">Envoyer le message</button>
         </form>
       </div>
-    </div>
-  </div>
 
-  <div class="bottom-bar">
-    <div class="nav-links">
-      <a href="index.html" class="nav-item">Pasteur Constant</a>
-      <a href="presentation.html" class="nav-item">Présentation</a>
-      <a href="contact.html" class="nav-item">Contact</a>
     </div>
-  </div>
 
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Pasteur Constant</div>
+        <div class="footer-brand-sub">
+          Pasteur baptiste indépendant<br>
+          Communauté Baptiste de Belgique<br>
+          Octave Michotlaan 1<br>
+          1640 Rhode-Saint-Genèse
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="bapteme.html">Baptême</a>
+        <a href="mariage.html">Mariage</a>
+        <a href="enterrement.html">Funérailles</a>
+        <a href="confirmation.html">Cours de Membres</a>
+        <a href="guidance.html">Guidance Spirituelle</a>
+      </div>
+      <div class="footer-col">
+        <h4>Communauté</h4>
+        <a href="presentation.html">Présentation</a>
+        <a href="index.html#communaute">La CBB</a>
+        <a href="https://www.baptistesdebelgique.be" target="_blank" rel="noopener">baptistesdebelgique.be</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+32470781834">0470 78 18 34</a>
+        <a href="mailto:info@reverend.be">info@reverend.be</a>
+        <a href="contact.html">Prendre rendez-vous</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Pasteur Constant — Tous droits réservés</div>
+      <div class="footer-devise">Unitas Lux Christus</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Script pour le menu hamburger
-      document.getElementById('hamburger-button').addEventListener('click', function(event) {
-        event.stopPropagation();
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenu.classList.toggle('hidden');
-      });
-      
-      document.addEventListener('click', function(event) {
-        const hamburgerButton = document.getElementById('hamburger-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (!hamburgerButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-          mobileMenu.classList.add('hidden');
-        }
-      });
+      var btn = document.getElementById('hamburger-button');
+      var menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menu.classList.toggle('hidden');
+        });
+        document.addEventListener('click', function(e) {
+          if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.add('hidden');
+          }
+        });
+      }
     });
   </script>
+
 </body>
 </html>
