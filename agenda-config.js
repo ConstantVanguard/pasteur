@@ -31,9 +31,12 @@ const serviceLeadTimes = {
   guidance: 8
 };
 
-// URL publique de votre agenda Google au format iCalendar (ICS)
+// URL publique de votre agenda Google au format iCalendar (ICS).
+// Passe par votre proxy Cloudflare Worker (agenda-proxy) qui ajoute les
+// en-tetes CORS necessaires pour que reverend.be puisse lire le calendrier.
+// Le code source du Worker se trouve dans votre tableau de bord Cloudflare.
 const originalGoogleCalendarIcsUrl = "https://calendar.google.com/calendar/ical/constantvanguard%40gmail.com/public/basic.ics";
-const googleCalendarIcsUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(originalGoogleCalendarIcsUrl);
+const googleCalendarIcsUrl = "https://agenda-proxy.frosty-butterfly-18e2.workers.dev/";
 
 
 // Liste qui sera remplie dynamiquement avec les dates bloquées récupérées depuis Google Calendar
