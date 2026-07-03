@@ -22,13 +22,14 @@ const manualBlockedDates = [
   // Ajoutez au-dessus vos propres dates bloquées
 ];
 
-// Délai d'attente minimum en jours avant de pouvoir réserver chaque service
+// Délai d'attente minimum en jours avant de pouvoir réserver chaque service.
+// 240 jours = 8 mois (8 x 30). Délai minimum fixé à 8 mois pour TOUS les services.
 const serviceLeadTimes = {
-  bapteme: 32,
-  mariage: 56,
-  confirmation: 23,
-  enterrement: 0, // Pour les funérailles, un délai de 0 jour est souvent nécessaire
-  guidance: 8
+  bapteme: 240,
+  mariage: 240,
+  confirmation: 240,
+  enterrement: 240, // ATTENTION : 8 mois s'applique aussi aux funérailles. Remettre 0 pour un délai immédiat.
+  guidance: 240
 };
 
 // URL publique de votre agenda Google au format iCalendar (ICS).
